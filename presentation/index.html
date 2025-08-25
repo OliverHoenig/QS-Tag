@@ -1,0 +1,1210 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>reveal.js</title>
+
+  <link rel="stylesheet" href="dist/reset.css" />
+  <link rel="stylesheet" href="dist/reveal.css" />
+  <link rel="stylesheet" href="dist/theme/moon.css" />
+  <link rel="stylesheet" href="plugin/pointer/pointer.css" />
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="plugin/highlight/atom-one-dark.css" />
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- =================================================================================== -->
+      <!-- Intro                                                                             -->
+      <!-- =================================================================================== -->
+      <section data-background-image="assets/question-marks.jpg">
+        <section>
+          <h1>Problem</h1>
+          <h2 class="r-fit-text fragment fade-in">Page Objects</h2>
+        </section>
+        <section data-auto-animate>
+          <div style="position: relative" class="r-stretch">
+            <div style="font-size: 2rem; position: absolute; left: -8%; top: 5%">
+              <pre data-id="code-1" class="r-frame" style="width: fit-content"><code data-trim data-line-numbers class="java">
+				public class SignInPage {
+  
+					private By usernameBy = By.name("user_name");
+					private By passwordBy = By.name("password");
+					private By signinBy = By.name("sign_in");
+  
+					public HomePage loginValidUser(String userName, String password) {
+						driver.findElement(usernameBy).sendKeys(userName);
+						driver.findElement(passwordBy).sendKeys(password);
+						driver.findElement(signinBy).click();
+						return new HomePage(driver);
+					}
+				}
+			  </code></pre>
+              <div style="font-size: small">
+                <a>https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/#examples</a>
+              </div>
+            </div>
+            <div style="font-size: 2rem; position: absolute; left: 45%; top: 25%; opacity: 0%">
+              <pre data-id="code-2" class="r-frame fade-in" style="width: fit-content"><code data-trim data-line-numbers class="typescript">
+					export class CookiesComponent {
+  
+						public cookiesSettingsButton: Locator;
+						public acceptAllCookiesButton: Locator;
+						
+						async openCookiesSettings()  {
+							await this.cookiesSettingsButton.click();
+						}
+						
+						async acceptAllCookies()  {
+							await this.acceptAllCookiesButton.click();
+						}
+					}
+			  </code></pre>
+            </div>
+            <div style="font-size: 1.3rem; position: absolute; left: 0%; top: 45%; opacity: 0%">
+              <pre data-id="code-3" class="r-frame" style="width: fit-content"><code data-trim data-line-numbers class="java">
+					public void clickLoginButton() {
+						driver.findElement(loginButton).click();
+					}
+				  
+					public void waitForPasswordFieldToAppear() {
+						wait.until(ExpectedConditions.visibilityOfElementLocated(passwordField));
+					}
+				  
+					public boolean isPasswordFieldVisible() {
+						return driver.findElement(passwordField).isDisplayed();
+					}
+			  </code></pre>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <div style="position: relative" class="r-stretch">
+            <div style="
+                  font-size: 2rem;
+                  position: absolute;
+                  left: -8%;
+                  top: 5%;
+                  filter: brightness(50%);
+                ">
+              <pre data-id="code-1" class="r-frame" style="width: fit-content"><code data-trim data-line-numbers class="java">
+					public class SignInPage {
+  
+						private By usernameBy = By.name("user_name");
+						private By passwordBy = By.name("password");
+						private By signinBy = By.name("sign_in");
+	  
+						public HomePage loginValidUser(String userName, String password) {
+							driver.findElement(usernameBy).sendKeys(userName);
+							driver.findElement(passwordBy).sendKeys(password);
+							driver.findElement(signinBy).click();
+							return new HomePage(driver);
+						}
+					}
+			  </code></pre>
+            </div>
+            <div style="font-size: 2rem; position: absolute; left: 45%; top: 25%">
+              <pre data-id="code-2" class="r-frame fade-in" style="width: fit-content"><code data-trim data-line-numbers class="typescript">
+					export class CookiesComponent {
+  
+						public cookiesSettingsButton: Locator;
+						public acceptAllCookiesButton: Locator;
+						
+						async openCookiesSettings()  {
+							await this.cookiesSettingsButton.click();
+						}
+						
+						async acceptAllCookies()  {
+							await this.acceptAllCookiesButton.click();
+						}
+					}
+			  </code></pre>
+              <div style="font-size: small">
+                <a>https://codilime.com/blog/page-object-model-with-playwright-and-typescript/</a>
+              </div>
+            </div>
+            <div style="font-size: 2rem; position: absolute; left: 0%; top: 45%; opacity: 0%">
+              <pre data-id="code-3" class="r-frame" style="width: fit-content"><code data-trim data-line-numbers class="java">
+					public void clickLoginButton() {
+						driver.findElement(loginButton).click();
+					}
+				  
+					public void waitForPasswordFieldToAppear() {
+						wait.until(ExpectedConditions.visibilityOfElementLocated(passwordField));
+					}
+				  
+					public boolean isPasswordFieldVisible() {
+						return driver.findElement(passwordField).isDisplayed();
+					}
+			  </code></pre>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <div style="position: relative" class="r-stretch">
+            <div style="
+                  font-size: 2rem;
+                  position: absolute;
+                  left: -8%;
+                  top: 5%;
+                  filter: brightness(50%);
+                ">
+              <pre data-id="code-1" class="r-frame" style="width: fit-content"><code data-trim data-line-numbers class="java">
+					public class SignInPage {
+  
+						private By usernameBy = By.name("user_name");
+						private By passwordBy = By.name("password");
+						private By signinBy = By.name("sign_in");
+	  
+						public HomePage loginValidUser(String userName, String password) {
+							driver.findElement(usernameBy).sendKeys(userName);
+							driver.findElement(passwordBy).sendKeys(password);
+							driver.findElement(signinBy).click();
+							return new HomePage(driver);
+						}
+					}
+			  </code></pre>
+            </div>
+            <div style="
+                  font-size: 2rem;
+                  position: absolute;
+                  left: 45%;
+                  top: 25%;
+                  filter: brightness(50%);
+                ">
+              <pre data-id="code-2" class="r-frame fade-in" style="width: fit-content"><code data-trim data-line-numbers class="typescript">
+				export class CookiesComponent {
+  
+					public cookiesSettingsButton: Locator;
+					public acceptAllCookiesButton: Locator;
+					
+					async openCookiesSettings()  {
+						await this.cookiesSettingsButton.click();
+					}
+					
+					async acceptAllCookies()  {
+						await this.acceptAllCookiesButton.click();
+					}
+				}
+			  </code></pre>
+            </div>
+            <div style="font-size: 2rem; position: absolute; left: 0%; top: 45%">
+              <pre data-id="code-3" class="r-frame" style="width: fit-content"><code data-trim data-line-numbers class="java">
+				public void clickLoginButton() {
+					driver.findElement(loginButton).click();
+				}
+			  
+				public void waitForPasswordFieldToAppear() {
+					wait.until(ExpectedConditions.visibilityOfElementLocated(passwordField));
+				}
+			  
+				public boolean isPasswordFieldVisible() {
+					return driver.findElement(passwordField).isDisplayed();
+				}
+			  </code></pre>
+              <div>
+                <img data-src="assets/open-ai-logo-white.svg" style="filter: brightness(75%)" width="100" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- =================================================================================== -->
+      <!-- Projekt                                                                             -->
+      <!-- =================================================================================== -->
+      <section data-background-image="assets/drawing-dark.jpg">
+        <section>
+          <h1>Projekt</h1>
+        </section>
+        <section>
+          <h3>Flottenverwaltung</h3>
+          <img data-src="assets/fleet-management.webp" alt="timeline project" class="r-stretch" />
+        </section>
+        <section>
+          <h3>Timeline</h3>
+          <div class="r-stack">
+            <img data-src="assets/timeline-no-arrow.svg" data-fragment-index="0" alt="timeline project" width="80%"
+              class="r-stretch fragment current-visible zoom-in" />
+            <img data-src="assets/timeline.svg" data-fragment-index="1" width="80%" class="r-stretch fragment none" />
+          </div>
+        </section>
+        <section>
+          <h2>Ziel</h2>
+          <div class="r-stack">
+            <img data-src="assets/pyramid-initial.svg" data-fragment-index="1" width="60%"
+              class="r-stretch fragment current-visible zoom-in" />
+            <img data-src="assets/pyramid-unit.svg" data-fragment-index="2" width="60%"
+              class="r-stretch fragment current-visible zoom-out" />
+            <img data-src="assets/pyramid-e2e.svg" data-fragment-index="3" width="60%"
+              class="r-stretch fragment fade-in" />
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h1 data-id="h1-0">
+            Geschafft?
+            <span class="fragment fade-up" style="display: inline-block; color: #00e1ff">
+              Ja.</span>
+          </h1>
+        </section>
+
+        <!-- -->
+        <section data-auto-animate data-background-image="assets/numbers.png">
+          <style>
+            .fragment.blur {
+              filter: blur(10px);
+            }
+
+            .fragment.blur.visible {
+              filter: none;
+            }
+          </style>
+          <h1 data-id="h1-0">
+            Geschafft?
+            <span style="display: inline-block; color: #00e1ff">Ja.</span>
+          </h1>
+          <ul>
+            <li class="fragment custom blur">
+              <span style="color: #00e1ff">90%</span> der Features abgedeckt
+              <ul>
+                <li>
+                  <span style="color: #00e1ff">536</span> Tests automatisiert (<span style="color: #00e1ff">1162</span>
+                  konkrete)
+                </li>
+              </ul>
+            </li>
+            <li class="fragment custom blur">
+              <span style="color: #00e1ff">Stabilität</span> gewährleistet
+              <ul>
+                <li>ca. <span style="color: #00e1ff">1-2%</span> flaky</li>
+              </ul>
+            </li>
+            <li class="fragment custom blur">
+              <span style="color: #00e1ff">Wartbarkeit</span> gewährleistet
+              <ul>
+                <li><span style="color: #00e1ff">251</span> Page Objects</li>
+                <li><span style="color: #00e1ff">218</span> Testdateien</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </section>
+      <!-- =================================================================================== -->
+      <!-- Dos & Don'ts                                                                        -->
+      <!-- =================================================================================== -->
+      <section data-background-image="assets/dos-donts.png">
+        <h1>Playwright</h1>
+        <h2>Dos & Don'ts</h2>
+      </section>
+      <!-- =================================================================================== -->
+      <!-- Docs                                                                                -->
+      <!-- =================================================================================== -->
+      <section>
+        <section data-background-image="assets/do-dark.png">
+          <h2 class="r-fit-text"><code>playwright.dev/docs/best-practices</code></h2>
+        </section>
+      </section>
+      <!-- =================================================================================== -->
+      <!-- Am Testobjekt orientieren                                                           -->
+      <!-- =================================================================================== -->
+      <section>
+        <section data-background-image="assets/do-dark.png">
+          <h2 class="r-fit-text">
+            <p class="fragment highlight-green">Immer</p>
+            am Testobjekt orientieren
+          </h2>
+          <span><sub class="fragment">... ansonsten Style Guide aufschreiben und einhalten</sub></span>
+        </section>
+        <section data-background-image="assets/network-blurred.jpg">
+          <h2>Pages & Tests</h2>
+          <div style="display: flex; align-items: center; justify-content: center">
+            <div style="width: 80%">
+              <img data-src="assets/mattermost.png" class="r-frame" style="border-width: 2px" />
+            </div>
+            <div style="width: 20%">
+              <pre><code data-trim class="r-frame mathematica" style="border-width: 2px; font-size: 0.8em; max-height: none; padding-left: 22px; width: 10vw;">
+				  playwright/
+				  ├─ pages/
+				  │  ├─ login/
+				  │  └─ main/
+				  │     ├─ channel/
+				  │     │  ├─ editor/
+				  │     │  ├─ header/
+				  │     │  └─ posts/
+				  │     └─ sidebar/
+				  └─ tests/
+					   ├─ login/
+					   └─ main/
+						    ├─ channel/
+						    │  ├─ editor/
+						    │  ├─ header/
+						    │  └─ posts/
+						    └─ sidebar/
+				  </code></pre>
+            </div>
+          </div>
+        </section>
+        <section data-background-image="assets/network-blurred.jpg">
+          <h2>APIs</h2>
+          <div style="display: flex; align-items: center; justify-content: center">
+            <div style="width: 20%; margin-bottom: 25%">
+              <pre><code data-trim class="r-frame mathematica" style="border-width: 2px; font-size: 0.8em; max-height: none; padding-left: 22px; width: 8vw;">
+					playwright/
+					├─ api/
+					│  ├─ users/
+					│  ├─ bots/
+					│  ├─ teams/
+					│  └─ channels/
+					├─ pages/
+					└─ tests/
+					</code></pre>
+            </div>
+            <div style="width: 80%">
+              <img data-src="assets/mattermost-api.png" class="r-frame" style="border-width: 2px" />
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- =================================================================================== -->
+      <!-- Setup/Teardown per API                                                              -->
+      <!-- =================================================================================== -->
+      <section>
+        <section data-background-image="assets/do-dark.png">
+          <h2 class="r-fit-text">
+            Setup & Teardown
+            <p class="fragment highlight-green">Immer</p>
+            per API
+          </h2>
+        </section>
+        <section data-background-image="assets/time.png">
+          <style>
+            .hr-sect {
+              display: flex;
+              flex-basis: 100%;
+              align-items: center;
+              margin: 10px 0px;
+            }
+
+            .hr-sect:before,
+            .hr-sect:after {
+              content: "";
+              flex-grow: 1;
+              background: var(--r-heading-color);
+              height: 1px;
+              font-size: 0px;
+              line-height: 0px;
+              margin: 0px 10px;
+            }
+          </style>
+          <h2>Preconditions bei 1000 Tests</h2>
+          <div style="color: var(--r-heading-color)">
+            <h3><span style="color: #00e1ff">UI</span>: 5 Sekunden</h3>
+            <p class="fragment" data-fragment-index="0">1000 · 5 s = 83 min 20 s</p>
+            <div class="fragment hr-sect" data-fragment-index="1">
+              <span style="margin-bottom: 5px">vs.</span>
+            </div>
+            <h3 data-fragment-index="1" class="fragment">
+              <span style="color: #00e1ff">API</span>: 0,2 Sekunden
+            </h3>
+            <p class="fragment" data-fragment-index="2">1000 · 0,2 s = 3 min 20s</p>
+          </div>
+        </section>
+        <section data-auto-animate data-background-image="assets/time.png">
+          <h2>Bonus</h2>
+          <div class="r-stack" style="position: relative">
+            <img data-src="assets/pyramid-initial.svg" data-fragment-index="1" width="60%" class="fragment zoom-in"
+              data-id="pyramid" />
+            <img data-src="assets/playwright-icon.svg" data-fragment-index="2" width="80px" class="fragment zoom-in"
+              data-id="icon-1" style="position: absolute; left: 55%; top: 5%" />
+          </div>
+        </section>
+        <section data-auto-animate data-background-image="assets/time.png">
+          <h2>Bonus</h2>
+          <div class="r-stack" style="position: relative">
+            <img data-src="assets/pyramid-initial.svg" width="60%" data-id="pyramid" />
+            <img data-src="assets/playwright-icon.svg" width="80px" data-id="icon-1"
+              style="position: absolute; left: 65%; top: 35%" />
+          </div>
+        </section>
+      </section>
+      <!-- =================================================================================== -->
+      <!-- Go fully parallel                                                                   -->
+      <!-- =================================================================================== -->
+      <section>
+        <section data-background-image="assets/do-dark.png">
+          <h2 class="r-fit-text">
+            <span class="fragment highlight-green">fully</span>
+            parallel
+          </h2>
+        </section>
+        <section data-auto-animate data-background-image="assets/parallel-lines.jpg">
+          <pre class="r-frame"><code data-trim data-line-numbers class="typescript">
+                import { defineConfig, devices } from '@playwright/test';
+
+                export default defineConfig({
+
+                  // Run all tests in parallel.
+                  fullyParallel: true,
+
+                })
+			</code></pre>
+        </section>
+        <section data-auto-animate data-background-image="assets/parallel-lines.jpg">
+          <pre class="r-frame"><code data-trim data-line-numbers class="typescript">
+                import { defineConfig, devices } from '@playwright/test';
+
+                export default defineConfig({
+
+                  // Run all tests in parallel.
+                  fullyParallel: true,
+
+                })
+			</code></pre>
+
+          <p>Unabhängige Tests in <span style="color: #00e1ff">eigene</span> Datei</p>
+          <p class="fragment">
+            Abhängige Tests in <span style="color: #00e1ff">gleiche</span> Datei
+          </p>
+        </section>
+        <section data-auto-animate data-background-image="assets/parallel-lines.jpg">
+          <pre class="r-frame"><code data-trim data-line-numbers class="typescript">
+                import { defineConfig, devices } from '@playwright/test';
+
+                export default defineConfig({
+
+                  // Run all tests in parallel.
+                  fullyParallel: true,
+
+                })
+			</code></pre>
+
+          <p>Unabhängige Tests in <span style="color: #00e1ff">eigene</span> Datei</p>
+
+          <hr style="width: 100%" />
+          <h3>Mutex</h3>
+          <p>Abhängige Tests in <span style="color: #00e1ff">gleiche</span> Datei</p>
+          <pre style="width: fit-content"><code>test.describe.configure({ mode: "default" })</code></pre>
+        </section>
+        <style>
+          .box {
+            width: 80px;
+            height: 50px;
+            padding: 5px;
+            border-radius: 10px;
+            color: white;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .api.red {
+            border: 3px solid darkred;
+          }
+
+          .api.green {
+            border: 3px solid darkgreen;
+          }
+
+          .ui.red {
+            background-color: darkred;
+          }
+
+          .ui.green {
+            background-color: darkgreen;
+          }
+
+          .start {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: lightgray;
+            margin-inline-end: 5px;
+          }
+
+          .end {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 6px solid lightgray;
+          }
+
+          .arrow {
+            color: lightgray;
+            padding-inline: 5px;
+            font-size: 1.5em;
+            transform: translateY(-10%);
+          }
+        </style>
+        <section data-auto-animate data-background-image="assets/parallel-lines.jpg">
+          <h2>Playwright plappert Performance</h2>
+          <pre><code class="properties" data-trim data-id="code-0">
+              $ Slow test file: [firefox] › new-item.spec.ts (33.3s)</code
+            ></pre>
+          <div class="fragment" data-fragment-index="0"
+            style="display: flex; flex-direction: column; row-gap: 30px; margin-top: 60px">
+            <div style="display: flex; justify-content: center; align-items: center; color: white">
+              <span class="start" data-id="start-0"></span>
+              <img data-src="assets/arrow-right.svg" alt="right arrow" class="arrow" data-id="arrow-0" width="50" />
+              <div class="r-stack">
+                <div class="box ui green" data-id="box-green-0">
+                  <span>UI</span>
+                </div>
+              </div>
+              <img data-src="assets/arrow-right.svg" alt="right arrow" class="arrow" data-id="arrow-1" width="50" />
+              <div class="box ui red" data-id="box-red-0"><span>UI</span></div>
+              <img data-src="assets/arrow-right.svg" alt="right arrow" class="arrow" data-id="arrow-2" width="50" />
+              <span class="end" data-id="end-0"></span>
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center">
+              <span class="start" data-id="start-1" style="opacity: 0"></span>
+              <img data-src="assets/arrow-right.svg" alt="right arrow" class="arrow" data-id="arrow-3" width="50"
+                style="opacity: 0" />
+              <div class="box api red" data-id="box-red-1" style="opacity: 0">
+                <span>API</span>
+              </div>
+              <img data-src="assets/arrow-right.svg" alt="right arrow" class="arrow" data-id="arrow-4" width="50"
+                style="opacity: 0" />
+              <div class="box ui green" data-id="box-green-1" style="opacity: 0">
+                <span>UI</span>
+              </div>
+              <img data-src="assets/arrow-right.svg" alt="right arrow" class="arrow" data-id="arrow-5" width="50"
+                style="opacity: 0" />
+              <span class="end" data-id="end-1" style="opacity: 0"></span>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate data-background-image="assets/parallel-lines.jpg">
+          <h2>Playwright plappert Performance</h2>
+          <pre><code class="properties" data-trim data-trim data-id="code-0">
+              $ Slow test file: [firefox] › new-item.spec.ts (33.3s)
+
+              $ Consider splitting slow test files to speed up parallel execution</code
+            ></pre>
+          <div style="display: flex; flex-direction: column; row-gap: 30px; margin-top: 60px">
+            <div style="display: flex; justify-content: center; align-items: center">
+              <code style="font-size: xx-large; padding-right: 30px">delete.spec.ts</code>
+              <span class="start" data-id="start-0"></span>
+              <img data-src="assets/arrow-right.svg" alt="right arrow" class="arrow" data-id="arrow-0" width="50" />
+              <div class="box api green" data-id="box-green-0"><span>API</span></div>
+              <img data-src="assets/arrow-right.svg" alt="right arrow" class="arrow" data-id="arrow-1" width="50" />
+              <div class="box ui red" data-id="box-red-0"><span>UI</span></div>
+              <img data-src="assets/arrow-right.svg" alt="right arrow" class="arrow" data-id="arrow-2" width="50" />
+              <span class="end" data-id="end-0"></span>
+            </div>
+            <div style="width: 100%; height: 1px; background-color: var(--r-heading-color)"></div>
+            <div style="display: flex; justify-content: center; align-items: center">
+              <code style="font-size: xx-large; padding-right: 30px">create.spec.ts</code>
+              <span class="start" data-id="start-1"></span>
+              <img data-src="assets/arrow-right.svg" alt="right arrow" class="arrow" data-id="arrow-3" width="50" />
+              <div class="box api red" data-id="box-red-1"><span>API</span></div>
+              <img data-src="assets/arrow-right.svg" alt="right arrow" class="arrow" data-id="arrow-4" width="50" />
+              <div class="box ui green" data-id="box-green-1"><span>UI</span></div>
+              <img data-src="assets/arrow-right.svg" alt="right arrow" class="arrow" data-id="arrow-5" width="50" />
+              <span class="end" data-id="end-1"></span>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- =================================================================================== -->
+      <!-- Abhängigkeit                                                                        -->
+      <!-- =================================================================================== -->
+      <section>
+        <section data-background-image="assets/dont-dark.png">
+          <h1 class="r-fit-text">
+            Auf Entwickler <span class="fragment highlight-red">warten</span>
+          </h1>
+        </section>
+        <section data-background-image="assets/html-blurred-dark.jpg">
+          <h2>Locators</h2>
+          <div style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: var(--r-heading-color);
+              ">
+            <div class="fragment" style="position: relative; height: 400px; width: 800px">
+              <canvas data-chart="bar">
+                <!--
+					{
+   "data":{
+      "labels":[
+         "getByLabel",
+         "getByAltText",
+         "getByTitle",
+         "getByPlaceholder",
+         "getByText",
+         "getByRole",
+         "locator",
+         "getByTestId"
+      ],
+      "datasets":[
+         {
+            "data":[
+               0,
+               0,
+               0,
+               2,
+               91,
+               195,
+               266,
+               1351
+            ]
+         }
+      ]
+   },
+   "options":{
+      "responsive":true,
+      "plugins":{
+         "legend":{
+            "display":false
+         }
+      },
+      "interaction":{
+         "intersect":false,
+         "mode":"x"
+      }
+   }
+}
+				  -->
+              </canvas>
+              <p class="fragment">
+                1552 <code style="color: #00e1ff">data-testid</code> Attribute
+              </p>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate data-background-image="assets/html-blurred-dark.jpg">
+          <h2>Locators</h2>
+          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript" style="overflow: hidden">
+              getByLabel('Telefonnummer')     // 👎 Translations
+            </code></pre>
+        </section>
+        <section data-auto-animate data-background-image="assets/html-blurred-dark.jpg">
+          <h2>Locators</h2>
+          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript" style="overflow: hidden">
+              getByLabel('Telefonnummer')     // 👎 Translations
+              getByTitle('Good Morning!')     // 👎 Translations
+            </code></pre>
+        </section>
+        <section data-auto-animate data-background-image="assets/html-blurred-dark.jpg">
+          <h2>Locators</h2>
+          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript" style="overflow: hidden">
+              getByLabel('Telefonnummer')     // 👎 Translations
+              getByTitle('Good Morning!')     // 👎 Translations
+              getByPlaceholder('Password')    // 👎 Translations
+            </code></pre>
+        </section>
+        <section data-auto-animate data-background-image="assets/html-blurred-dark.jpg">
+          <h2>Locators</h2>
+          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript" style="overflow: hidden">
+              getByLabel('Telefonnummer')     // 👎 Translations
+              getByTitle('Good Morning!')     // 👎 Translations
+              getByPlaceholder('Password')    // 👎 Translations
+              getByAltText('profile picture') // ➖ keine Bildvergleiche
+            </code></pre>
+        </section>
+        <section data-auto-animate data-background-image="assets/html-blurred-dark.jpg">
+          <h2>Locators</h2>
+          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript" style="overflow: hidden">
+              getByLabel('Telefonnummer')     // 👎 Translations
+              getByTitle('Good Morning!')     // 👎 Translations
+              getByPlaceholder('Password')    // 👎 Translations
+              getByAltText('profile picture') // ➖ keine Bildvergleiche
+              getByText('Airbus A380')        // 👀 Legacy, Faulheit
+            </code></pre>
+        </section>
+        <section data-auto-animate data-background-image="assets/html-blurred-dark.jpg">
+          <h2>Locators</h2>
+          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript" style="overflow: hidden">
+              getByLabel('Telefonnummer')     // 👎 Translations
+              getByTitle('Good Morning!')     // 👎 Translations
+              getByPlaceholder('Password')    // 👎 Translations
+              getByAltText('profile picture') // ➖ keine Bildvergleiche
+              getByText('Airbus A380')        // 👀 Legacy, Faulheit
+              getByRole('button')             // 👍 Sehr nützlich
+            </code></pre>
+          <div style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                gap: 5%;
+              ">
+            <div style="color: var(--r-heading-color)">
+              <p><span style="color: #00e1ff">Explicit</span> ARIA roles</p>
+              <pre style="width: fit-content"><code class="html"><mat-row role="row"/></code></pre>
+              <pre style="width: fit-content"><code>getByRole('row')</code></pre>
+            </div>
+            <div style="color: var(--r-heading-color)">
+              <p><span style="color: #00e1ff">Implicit</span> ARIA roles</p>
+              <pre style="width: fit-content"><code class="html"><input type="search"></code></pre>
+              <pre style="width: fit-content"><code>getByRole('searchbox')</code></pre>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate data-background-image="assets/html-blurred-dark.jpg">
+          <h2>Locators</h2>
+          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript" style="overflow: hidden">
+              getByLabel('Telefonnummer')     // 👎 Translations
+              getByTitle('Good Morning!')     // 👎 Translations
+              getByPlaceholder('Password')    // 👎 Translations
+              getByAltText('profile picture') // ➖ keine Bildvergleiche
+              getByText('Airbus A380')        // 👀 Legacy, Faulheit
+              getByRole('button')             // 👍 Sehr nützlich
+              locator('#country')             // 👍 Sehr nützlich
+            </code></pre>
+        </section>
+        <section data-auto-animate data-background-image="assets/html-blurred-dark.jpg">
+          <h2>Locators</h2>
+          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript" style="overflow: hidden">
+              getByLabel('Telefonnummer')     // 👎 Translations
+              getByTitle('Good Morning!')     // 👎 Translations
+              getByPlaceholder('Password')    // 👎 Translations
+              getByAltText('profile picture') // ➖ keine Bildvergleiche
+              getByText('Airbus A380')        // 👀 Legacy, Faulheit
+              getByRole('button')             // 👍 Sehr nützlich
+              locator('#country')             // 👍 Sehr nützlich
+              getByTestId('button-settings')  // 👍 Top!
+            </code></pre>
+        </section>
+      </section>
+      <!-- =================================================================================== -->
+      <!-- Reject the Gurke                                                                    -->
+      <!-- =================================================================================== -->
+      <section>
+        <section data-background-image="assets/dont-dark.png">
+          <h1 class="r-fit-text"><span class="fragment highlight-red">Reject</span> the Gurke</h1>
+        </section>
+        <style>
+          .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4px;
+            width: 40px;
+            height: 40px;
+            border-radius: 25%;
+            color: var(--r-heading-color);
+          }
+
+          .node {
+            width: 100%;
+            border: 1px solid var(--r-heading-color);
+            box-sizing: border-box;
+            padding: 20px;
+            font-size: 1.2rem;
+          }
+
+          .midnightblue {
+            background-color: #27a365;
+          }
+
+          .bluegray {
+            background-color: #5885af;
+          }
+
+          .darkblue {
+            background-color: #3d64a3;
+          }
+
+          .babyblue {
+            background-color: #52aab9;
+          }
+
+          .cream {
+            background-color: #f6eee0;
+          }
+
+          .peach {
+            background-color: #e4b7a0;
+          }
+
+          .desertsun {
+            background-color: #a45c40;
+          }
+
+          .coral {
+            background-color: #c38370;
+          }
+
+          .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            /* column-gap: 5px; */
+            width: 100%;
+          }
+
+          .column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* row-gap: 25px; */
+            width: 100%;
+          }
+
+          .empty {
+            padding: 7px;
+          }
+        </style>
+        <section data-auto-animate="" data-state="stats" data-background-image="assets/forest-dark.jpg">
+          <h2>Chaos</h2>
+          <div class="r-stack">
+            <img data-src="assets/retro-dark.png" class="fragment current-visible r-frame" width="500" />
+            <img data-src="assets/pageobject.gif" class="fragment current-visible r-frame" width="500" />
+            <div class="fragment" style="
+                  position: relative;
+                  font-size: x-large;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  width: 100%;
+                  color: var(--r-heading-color);
+                ">
+              <div class="row">
+                <div class="item midnightblue" data-id="p-1"></div>
+                <div class="empty"></div>
+                <div class="item coral" data-id="p-15"></div>
+                <div class="empty"></div>
+                <div class="item peach" data-id="p-11"></div>
+                <div class="empty"></div>
+                <div class="item peach" data-id="p-12"></div>
+              </div>
+              <div class="empty"></div>
+              <div class="row">
+                <div class="item bluegray" data-id="p-3"></div>
+                <div class="empty"></div>
+                <div class="item darkblue" data-id="p-5"></div>
+                <div class="empty"></div>
+                <div class="item babyblue" data-id="p-8"></div>
+                <div class="empty"></div>
+                <div class="item desertsun" data-id="p-14"></div>
+              </div>
+              <div class="empty"></div>
+              <div class="row">
+                <div class="item midnightblue" data-id="p-2"></div>
+                <div class="empty"></div>
+                <div class="item coral" data-id="p-16"></div>
+                <div class="empty"></div>
+                <div class="item darkblue" data-id="p-6"></div>
+                <div class="empty"></div>
+                <div class="item cream" data-id="p-9"></div>
+              </div>
+              <div class="empty"></div>
+              <div class="row">
+                <div class="item cream" data-id="p-10"></div>
+                <div class="empty"></div>
+                <div class="item desertsun" data-id="p-13"></div>
+                <div class="empty"></div>
+                <div class="item babyblue" data-id="p-7"></div>
+                <div class="empty"></div>
+                <div class="item bluegray" data-id="p-4"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate data-state="stats" data-background-image="assets/forest-dark.jpg">
+          <h2>Order</h2>
+          <div style="
+                position: relative;
+                font-size: x-large;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                color: var(--r-heading-color);
+              ">
+            <span class="node" style="background-color: #8b989422">page</span>
+            <div class="row">
+              <div class="column">
+                <span class="node" style="background-color: #448e9c44">machine</span>
+                <div class="row">
+                  <div class="column">
+                    <span class="node" style="background-color: #40948a66">car</span>
+                    <div class="row">
+                      <div class="column">
+                        <span class="node" style="background-color: #27a36588">alarm</span>
+                        <div class="row" style="column-gap: 5px; margin-top: 10px">
+                          <div class="item midnightblue" data-id="p-1"></div>
+                          <div class="item midnightblue" data-id="p-2"></div>
+                        </div>
+                      </div>
+                      <div class="column">
+                        <span class="node" style="background-color: #5885af88">service</span>
+                        <div class="row" style="column-gap: 5px; margin-top: 10px">
+                          <div class="item bluegray" data-id="p-3"></div>
+                          <div class="item bluegray" data-id="p-4"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <span class="node" style="background-color: #4887ae44">truck</span>
+                    <div class="row">
+                      <div class="column">
+                        <span class="node" style="background-color: #3d64a388">manual</span>
+                        <div class="row" style="column-gap: 5px; margin-top: 10px">
+                          <div class="item darkblue" data-id="p-5"></div>
+                          <div class="item darkblue" data-id="p-6"></div>
+                        </div>
+                      </div>
+                      <div class="column">
+                        <span class="node" style="background-color: #52aab988">driver</span>
+                        <div class="row" style="column-gap: 5px; margin-top: 10px">
+                          <div class="item babyblue" data-id="p-7"></div>
+                          <div class="item babyblue" data-id="p-8"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="column">
+                <span class="node" style="background-color: #d1a28c44">analysis</span>
+                <div class="row">
+                  <div class="column">
+                    <span class="node" style="background-color: #edd3c066">telemetry</span>
+                    <div class="row">
+                      <div class="column">
+                        <span class="node" style="background-color: #f6eee088">sensor</span>
+                        <div class="row" style="column-gap: 5px; margin-top: 10px">
+                          <div class="item cream" data-id="p-9"></div>
+                          <div class="item cream" data-id="p-10"></div>
+                        </div>
+                      </div>
+                      <div class="column">
+                        <span class="node" style="background-color: #e4b7a088">data</span>
+                        <div class="row" style="column-gap: 5px; margin-top: 10px">
+                          <div class="item peach" data-id="p-11"></div>
+                          <div class="item peach" data-id="p-12"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <span class="node" style="background-color: #b4705844">reports</span>
+                    <div class="row">
+                      <div class="column">
+                        <span class="node" style="background-color: #a45c4088">today</span>
+                        <div class="row" style="column-gap: 5px; margin-top: 10px">
+                          <div class="item desertsun" data-id="p-13"></div>
+                          <div class="item desertsun" data-id="p-14"></div>
+                        </div>
+                      </div>
+                      <div class="column">
+                        <span class="node" style="background-color: #c3837088">customer</span>
+                        <div class="row" style="column-gap: 5px; margin-top: 10px">
+                          <div class="item coral" data-id="p-15"></div>
+                          <div class="item coral" data-id="p-16"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate data-state="stats" data-background-image="assets/forest-dark.jpg">
+          <h2>Order</h2>
+          <pre style="font-size: 1.2rem"><code class="typescript r-frame" data-line-numbers data-trim>
+              test("no alarms in overview, no alarms recorded", async ({ on, page }) => {
+                await on(page).machine.car.open("FZR 2000", "BN DE 598");
+                await on(page).machine.car.alarm.check.alarmsPresent([]);
+                await on(page).machine.car.alarm.do.switchToAnalysis();
+                await on(page).analysis.telemetry.sensor.check.alarmsRecorded([]);
+              });
+            </code></pre>
+        </section>
+      </section>
+      <!-- =================================================================================== -->
+      <!-- Mocking                                                                             -->
+      <!-- =================================================================================== -->
+      <section>
+        <section data-background-image="assets/dont-dark.png">
+          <h1 class="r-fit-text">
+            <span class="fragment highlight-red" data-fragment-index="0">Mocking</span>
+          </h1>
+          <h2 data-fragment-index="0">
+            <div class="fragment" data-fragment-index="0"
+              style="display: flex; flex-direction: row; justify-content: center">
+              <div class="alarm">🚨</div>
+              <div class="alarm">🚨</div>
+              <div class="alarm">🚨</div>
+            </div>
+          </h2>
+        </section>
+        <style>
+          @keyframes grow {
+            from {
+              transform: scale(1);
+            }
+
+            to {
+              transform: scale(1.2);
+            }
+          }
+
+          .alarm {
+            transition-duration: 1s;
+            animation-name: grow;
+            animation-duration: 0.5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-direction: alternate;
+          }
+        </style>
+        <section data-state="stats" data-background-image="assets/radar-dark.jpg">
+          <h2>Dynamische Daten 😤</h2>
+          <div style="
+                padding-top: 10%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                column-gap: 50px;
+              ">
+            <img data-src="assets/simulation.svg" class="r-stretch fragment" width="1000" />
+          </div>
+        </section>
+        <section data-state="stats" data-background-image="assets/radar-dark.jpg">
+          <h2>Wenn man einen Hammer hat...</h2>
+          <div style="
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                column-gap: 50px;
+              ">
+            <img data-src="assets/dark-side-abilities.jpg" class="r-frame fragment fade-down" width="500" />
+            <div style="color: var(--r-heading-color); text-align: left">
+              <p class="fragment fade-up">
+                <span style="color: rgb(233, 49, 49)">aufwendig</span> zu warten
+              </p>
+              <p class="fragment fade-in">
+                <span style="color: rgb(233, 49, 49)">kein</span> E2E mehr
+              </p>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- =================================================================================== -->
+      <!-- Multi-User                                                                          -->
+      <!-- =================================================================================== -->
+      <section>
+        <section data-background-image="assets/do-dark.png">
+          <h1 class="r-fit-text">Multi-User</h1>
+          <h2 class="fragment highlight-green">Sugar</h2>
+        </section>
+        <section data-background-image="assets/people-dark.jpg">
+          <h1>Jane & John</h1>
+          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript" style="overflow: hidden;font-size: 1.3rem;">
+				test("multi-user", async ({ as, on, page }) => {
+					await on(page).main.open();
+					await on(page).main.editor.do.sendMessage({ text: "Hi from Jane!" });
+				  
+					await as("john@example.org", async ({ page }) => {
+						await on(page)
+							.main.posts.getPost({ author: "Jane", which: "last" })
+							.check.equals({ message: "Hi from Jane!" });
+					});
+				});
+            </code></pre>
+        </section>
+        <section data-background-image="assets/people-dark.jpg">
+          <h1>John, but single</h1>
+          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript" style="overflow: hidden;font-size: 1.3rem;">
+				test.as("john@example.org", () => {
+					test("check title", async ({ on, page }) => {
+						await on(page).main.open();
+						await on(page).main.title.check.greeting('Hi John!');
+					});
+				});
+            </code></pre>
+        </section>
+      </section>
+      <section data-background-image="assets/dos-donts.png">
+        <h1>Dos & Don'ts</h1>
+        <div style="
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              color: var(--r-heading-color);
+            ">
+          <div style="width: 100%">
+            <p>Playwright Guide</p>
+            <p>Testobjekt ist Quelle der Wahrheit</p>
+            <p>Setup/Teardown per API</p>
+            <p>Fully Parallel</p>
+            <p>Multi-User Sugar</p>
+          </div>
+          <div style="width: 200px"></div>
+          <div style="width: 100%">
+            <p>Von Entwicklern abhängig machen</p>
+            <p>Mocking</p>
+            <p>Hohe Abstraktionsniveaus</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/zoom/zoom.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script src="plugin/pointer/pointer.js"></script>
+  <script src="plugin/chart/plugin.js"></script>
+  <script src="plugin/chart/chart.min.js"></script>
+  <script type="module">
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      pointer: {
+        key: "q", // key to enable pointer, default "q", not case-sensitive
+        color: "red", // color of a cursor, default "red" any valid CSS color
+        opacity: 0.9, // opacity of cursor, default 0.8
+        pointerSize: 25, // pointer size in px, default 12
+        alwaysVisible: false, // should pointer mode be always visible? default "false"
+      },
+      chart: {
+        defaults: {
+          color: "lightgray", // color of labels
+          scale: {
+            beginAtZero: true,
+            ticks: { stepSize: 100 },
+            grid: { color: "lightgray" }, // color of grid lines
+            font: { size: 20 },
+          },
+        },
+        bar: {
+          backgroundColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"],
+        },
+      },
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [
+        RevealMarkdown,
+        RevealHighlight,
+        RevealNotes,
+        RevealZoom,
+        RevealPointer,
+        RevealChart,
+      ],
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="120.60452mm"
+   height="37.265114mm"
+   viewBox="0 0 120.60452 37.265114"
+   version="1.1"
+   id="svg15296"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="simulation.svg"
+   inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-1.png"
+   inkscape:export-xdpi="74.629997"
+   inkscape:export-ydpi="74.629997"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview15298"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="1.5518659"
+     inkscape:cx="203.30365"
+     inkscape:cy="121.14449"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs15293">
+    <marker
+       style="overflow:visible"
+       id="StopL"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="StopL"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8)"
+         style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,5.65 V -5.65"
+         id="path14791" />
+    </marker>
+    <marker
+       inkscape:stockid="DistanceStart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="DistanceStart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <g
+         id="g2300">
+        <path
+           id="path2306"
+           d="M 0,0 H 2"
+           style="fill:none;stroke:context-fill;stroke-width:1.15;stroke-linecap:square" />
+        <path
+           id="path2302"
+           d="M 0,0 13,4 9,0 13,-4 Z"
+           style="fill:context-stroke;fill-rule:evenodd;stroke:none" />
+        <path
+           id="path2304"
+           d="M 0,-4 V 40"
+           style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:square" />
+      </g>
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mstart"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.4,0,0,0.4,4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path14628" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mstart-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.4,0,0,0.4,4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path14628-1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mstart-7"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.4,0,0,0.4,4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path14628-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mstart-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.4,0,0,0.4,4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path14628-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mstart-5"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.4,0,0,0.4,4,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path14628-4" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(66.685167,-58.002003)">
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#e3e3e4;stroke-width:0.79551;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.77306, 4.77306;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect50394"
+       width="108.69772"
+       height="71.369881"
+       x="-60.670811"
+       y="107.15179"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#e3e3e4;stroke-width:0.79375;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.7625, 4.7625;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect50602"
+       width="108.37057"
+       height="71.372955"
+       x="-156.35802"
+       y="107.15025"
+       transform="scale(-1,1)"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#StopL);fill-opacity:1"
+       d="M 18.720473,75.083566 H 47.875771"
+       id="path47052"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-1.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36" />
+    <path
+       style="color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.721364;-inkscape-stroke:none"
+       d="m -18.854788,65.801303 v 9.039062 h 0.554919 v -9.039062 z"
+       id="path27812"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-1.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-30.328665"
+       y="62.290455"
+       id="text29092"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-1.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36"><tspan
+         sodipodi:role="line"
+         id="tspan29090"
+         style="font-size:5.64444px;stroke-width:0.264583;fill:#ffffff;fill-opacity:1"
+         x="-30.328665"
+         y="62.290455">20 km/h</tspan></text>
+    <path
+       style="color:#000000;fill:#ffffff;fill-rule:evenodd;stroke-width:0.721364;-inkscape-stroke:none;fill-opacity:1"
+       d="m 18.186879,65.272136 v 9.039062 h 0.554919 v -9.039062 z"
+       id="path32082"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-1.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="6.7130017"
+       y="62.290455"
+       id="text32086"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-1.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36"><tspan
+         sodipodi:role="line"
+         id="tspan32084"
+         style="font-size:5.64444px;stroke-width:0.264583;fill:#ffffff;fill-opacity:1"
+         x="6.7130017"
+         y="62.290455">8 km/h</tspan></text>
+    <path
+       style="color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.721364;-inkscape-stroke:none"
+       d="m -50.60479,65.801303 v 9.039062 h 0.55492 v -9.039062 z"
+       id="path32088"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-1.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-62.078671"
+       y="62.290455"
+       id="text32092"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-1.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36"><tspan
+         sodipodi:role="line"
+         id="tspan32090"
+         style="font-size:5.64444px;stroke-width:0.264583;fill:#ffffff;fill-opacity:1"
+         x="-62.078671"
+         y="62.290455">0 km/h</tspan></text>
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Mstart)"
+       d="m -34.640552,79.59452 v 8.695179"
+       id="path35408"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-1.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Mstart)"
+       d="m 0.81361463,79.59452 v 8.695179"
+       id="path35841"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-1.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Mstart)"
+       d="m 33.092783,79.59452 v 8.695179"
+       id="path35843"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-1.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-38.460537"
+       y="94.131615"
+       id="text36529"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-1.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36"><tspan
+         sodipodi:role="line"
+         id="tspan36527"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ff0000;fill-opacity:1;stroke-width:0.264583"
+         x="-38.460537"
+         y="94.131615">(1)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-2.4772046"
+       y="94.131615"
+       id="text40161"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-1.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36"><tspan
+         sodipodi:role="line"
+         id="tspan40159"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ff0000;fill-opacity:1;stroke-width:0.264583"
+         x="-2.4772046"
+         y="94.131615">(2)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="29.801958"
+       y="94.131615"
+       id="text40267"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-1.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36"><tspan
+         sodipodi:role="line"
+         id="tspan40265"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:Arial;-inkscape-font-specification:Arial;fill:#ff0000;fill-opacity:1;stroke-width:0.264583"
+         x="29.801958"
+         y="94.131615">(3)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#d9d9d9;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-66.968353"
+       y="83.97715"
+       id="text40413"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-1.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36"><tspan
+         sodipodi:role="line"
+         id="tspan40411"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:#d9d9d9;fill-opacity:1;stroke-width:0.264583"
+         x="-66.968353"
+         y="83.97715">00:00</tspan></text>
+    <path
+       style="fill:none;stroke:#70cdff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#StopL);marker-end:url(#StopL)"
+       d="m -60.654527,75.083566 h 79.17039"
+       id="path26685"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-1.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#d9d9d9;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="11.877488"
+       y="83.97715"
+       id="text47499"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-1.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36"><tspan
+         sodipodi:role="line"
+         id="tspan47497"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:#d9d9d9;fill-opacity:1;stroke-width:0.264583"
+         x="11.877488"
+         y="83.97715">18:00</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#StopL)"
+       d="M 18.720473,143.87526 H 47.875771"
+       id="path47683"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997" />
+    <path
+       style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.721364;-inkscape-stroke:none"
+       d="m -18.854788,134.06382 v 9.03907 h 0.554919 v -9.03907 z"
+       id="path47685"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-30.328665"
+       y="131.08211"
+       id="text47689"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997"><tspan
+         sodipodi:role="line"
+         id="tspan47687"
+         style="font-size:5.64444px;stroke-width:0.264583"
+         x="-30.328665"
+         y="131.08211">20 km/h</tspan></text>
+    <path
+       style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.721364;-inkscape-stroke:none"
+       d="m 18.186879,134.06382 v 9.03907 h 0.554919 v -9.03907 z"
+       id="path47691"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="6.7130017"
+       y="131.08211"
+       id="text47695"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997"><tspan
+         sodipodi:role="line"
+         id="tspan47693"
+         style="font-size:5.64444px;stroke-width:0.264583"
+         x="6.7130017"
+         y="131.08211">8 km/h</tspan></text>
+    <path
+       style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.721364;-inkscape-stroke:none"
+       d="m -45.313123,134.06382 v 9.03907 h 0.55492 v -9.03907 z"
+       id="path47697"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-56.787003"
+       y="131.08211"
+       id="text47701"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997"><tspan
+         sodipodi:role="line"
+         id="tspan47699"
+         style="font-size:5.64444px;stroke-width:0.264583"
+         x="-56.787003"
+         y="131.08211">0 km/h</tspan></text>
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Mstart)"
+       d="m 71.192786,148.38622 v 8.69518"
+       id="path47703"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Mstart)"
+       d="m 106.64696,148.38622 v 8.69518"
+       id="path47705"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Mstart)"
+       d="m 138.92614,148.38622 v 8.69518"
+       id="path47707"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="66.843636"
+       y="162.92331"
+       id="text47711"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997"><tspan
+         sodipodi:role="line"
+         id="tspan47709"
+         style="font-size:5.64444px;fill:#ff0000;fill-opacity:1;stroke-width:0.264583"
+         x="66.843636"
+         y="162.92331">(1)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="102.29778"
+       y="162.92331"
+       id="text47715"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997"><tspan
+         sodipodi:role="line"
+         id="tspan47713"
+         style="font-size:5.64444px;fill:#ff0000;fill-opacity:1;stroke-width:0.264583"
+         x="102.29778"
+         y="162.92331">(2)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="134.57693"
+       y="162.92331"
+       id="text47719"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997"><tspan
+         sodipodi:role="line"
+         id="tspan47717"
+         style="font-size:5.64444px;fill:#ff0000;fill-opacity:1;stroke-width:0.264583"
+         x="134.57693"
+         y="162.92331">(3)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-66.968353"
+       y="152.76881"
+       id="text47723"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997"><tspan
+         sodipodi:role="line"
+         id="tspan47721"
+         style="font-size:4.23333px;fill:#696969;fill-opacity:1;stroke-width:0.264583"
+         x="-66.968353"
+         y="152.76881">00:00</tspan></text>
+    <path
+       style="fill:none;stroke:#70cdff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#StopL);marker-end:url(#StopL)"
+       d="m -60.654527,143.87526 h 79.17039"
+       id="path47729"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="11.877488"
+       y="152.76881"
+       id="text47733"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997"><tspan
+         sodipodi:role="line"
+         id="tspan47731"
+         style="font-size:4.23333px;fill:#696969;fill-opacity:1;stroke-width:0.264583"
+         x="11.877488"
+         y="152.76881">18:00</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#StopL)"
+       d="M 47.82464,143.87526 H 156.35496"
+       id="path47949"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#d9d9d9;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="41.510818"
+       y="83.97715"
+       id="text48294"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-1.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36"><tspan
+         sodipodi:role="line"
+         id="tspan48292"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:#d9d9d9;fill-opacity:1;stroke-width:0.264583"
+         x="41.510818"
+         y="83.97715">00:00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="41.510818"
+       y="152.76881"
+       id="text48298"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997"><tspan
+         sodipodi:role="line"
+         id="tspan48296"
+         style="font-size:4.23333px;fill:#696969;fill-opacity:1;stroke-width:0.264583"
+         x="41.510818"
+         y="152.76881">00:00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="149.98994"
+       y="152.76881"
+       id="text48302"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997"><tspan
+         sodipodi:role="line"
+         id="tspan48300"
+         style="font-size:4.23333px;fill:#696969;fill-opacity:1;stroke-width:0.264583"
+         x="149.98994"
+         y="152.76881">00:00</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#StopL)"
+       d="M -39.48786,207.3753 H 47.875771"
+       id="path48380"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-3.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36" />
+    <path
+       style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.721364;-inkscape-stroke:none"
+       d="m -47.958958,197.56386 v 9.03907 h 0.554919 v -9.03907 z"
+       id="path48382"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-3.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-59.432838"
+       y="194.58217"
+       id="text48386"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-3.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36"><tspan
+         sodipodi:role="line"
+         id="tspan48384"
+         style="font-size:5.64444px;stroke-width:0.264583"
+         x="-59.432838"
+         y="194.58217">20 km/h</tspan></text>
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Mstart)"
+       d="m -24.057218,211.88626 v 8.69518"
+       id="path48400"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-3.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Mstart)"
+       d="m 6.1052813,211.88626 v 8.69518"
+       id="path48402"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-3.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Mstart)"
+       d="m 33.092783,211.88626 v 8.69518"
+       id="path48404"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-3.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-28.40637"
+       y="226.42337"
+       id="text48408"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-3.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36"><tspan
+         sodipodi:role="line"
+         id="tspan48406"
+         style="font-size:5.64444px;fill:#ff0000;fill-opacity:1;stroke-width:0.264583"
+         x="-28.40637"
+         y="226.42337">(1)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="1.7561287"
+       y="226.42337"
+       id="text48412"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-3.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36"><tspan
+         sodipodi:role="line"
+         id="tspan48410"
+         style="font-size:5.64444px;fill:#ff0000;fill-opacity:1;stroke-width:0.264583"
+         x="1.7561287"
+         y="226.42337">(2)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="28.743624"
+       y="226.42337"
+       id="text48416"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-3.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36"><tspan
+         sodipodi:role="line"
+         id="tspan48414"
+         style="font-size:5.64444px;fill:#ff0000;fill-opacity:1;stroke-width:0.264583"
+         x="28.743624"
+         y="226.42337">(3)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-66.968353"
+       y="216.26888"
+       id="text48420"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-3.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36"><tspan
+         sodipodi:role="line"
+         id="tspan48418"
+         style="font-size:4.23333px;fill:#696969;fill-opacity:1;stroke-width:0.264583"
+         x="-66.968353"
+         y="216.26888">00:00</tspan></text>
+    <path
+       style="fill:none;stroke:#70cdff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#StopL);marker-end:url(#StopL)"
+       d="M -60.654527,207.3753 H -39.69247"
+       id="path48422"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-3.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-46.330845"
+       y="216.26888"
+       id="text48426"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-3.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36"><tspan
+         sodipodi:role="line"
+         id="tspan48424"
+         style="font-size:4.23333px;fill:#696969;fill-opacity:1;stroke-width:0.264583"
+         x="-46.330845"
+         y="216.26888">06:00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="41.510818"
+       y="216.26888"
+       id="text48430"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-3.png"
+       inkscape:export-xdpi="126.36"
+       inkscape:export-ydpi="126.36"><tspan
+         sodipodi:role="line"
+         id="tspan48428"
+         style="font-size:4.23333px;fill:#696969;fill-opacity:1;stroke-width:0.264583"
+         x="41.510818"
+         y="216.26888">00:00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-17.790712"
+       y="114.72489"
+       id="text49028"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997"><tspan
+         sodipodi:role="line"
+         id="tspan49026"
+         style="font-size:5.64444px;stroke-width:0.264583"
+         x="-17.790712"
+         y="114.72489">Day 1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="96.671326"
+       y="115.20712"
+       id="text49926"
+       inkscape:export-filename="C:\Repositories\CLAAS\report\simulation-past-2.png"
+       inkscape:export-xdpi="74.629997"
+       inkscape:export-ydpi="74.629997"><tspan
+         sodipodi:role="line"
+         id="tspan49924"
+         style="font-size:5.64444px;stroke-width:0.264583"
+         x="96.671326"
+         y="115.20712">Day 2</tspan></text>
+  </g>
+</svg>
