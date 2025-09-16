@@ -610,131 +610,110 @@
           </div>
         </section>
       </section>
+
       <!-- =================================================================================== -->
-      <!-- Abhängigkeit                                                                        -->
+      <!-- Abhängigkeit -->
       <!-- =================================================================================== -->
       <section>
         <section data-background-image="assets/dont-dark.png">
           <h1 class="r-fit-text">
             Auf Entwickler <span class="fragment highlight-red">warten</span>
           </h1>
+          <aside class="notes">
+            Macht euch nicht von Entwicklern abhängig. Wartet nicht darauf, dass sie euch die Locators oder Test-IDs einbauen. Holt euch die Zugänge ins Repository und löst die Probleme 
+            selbst. Das spart Zeit, verhindert Blockaden und macht euch unabhängig – und die Entwickler sind meistens sogar froh, wenn sie sich nicht auch noch darum kümmern müssen.
+            Und ja, da ist manchmal ein wenig Diskussion für notwendig, aber es lohnt sich.
+          </aside>
         </section>
+
         <section data-background-image="assets/html-blurred-dark.jpg">
           <h2>Locators</h2>
-          <div style="
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: var(--r-heading-color);
-              ">
+          <div style="display: flex; justify-content: center; align-items: center; color: var(--r-heading-color);">
             <div class="fragment" style="position: relative; height: 400px; width: 800px">
               <canvas data-chart="bar">
-                <!--
-					{
-   "data":{
-      "labels":[
-         "getByLabel",
-         "getByAltText",
-         "getByTitle",
-         "getByPlaceholder",
-         "getByText",
-         "getByRole",
-         "locator",
-         "getByTestId"
-      ],
-      "datasets":[
-         {
-            "data":[
-               0,
-               0,
-               0,
-               2,
-               91,
-               195,
-               266,
-               1351
-            ]
-         }
-      ]
-   },
-   "options":{
-      "responsive":true,
-      "plugins":{
-         "legend":{
-            "display":false
-         }
-      },
-      "interaction":{
-         "intersect":false,
-         "mode":"x"
-      }
-   }
-}
-				  -->
+                <!-- chart config -->
               </canvas>
               <p class="fragment">
                 1552 <code style="color: #00e1ff">data-testid</code> Attribute
               </p>
             </div>
           </div>
+          <aside class="notes">
+            Wir haben in unserem Projekt sehr schnell gemerkt: ohne eigene Test-IDs hätten wir das nicht geschafft. Am Ende waren es über 1500 data-testid Attribute im Frontend. 
+            Wären wir jedes Mal auf Entwickler angewiesen gewesen, hätten sie uns den Kopf abgerissen. Deshalb: Test-IDs selbst setzen und nicht warten.
+            data-testids sind super, weil sie sich nicht ändern, wenn sich das UI ändert. Und sie sind unsichtbar für Nutzer und Sprach- und Location-unabhängig
+          </aside>
         </section>
+
         <section data-auto-animate data-background-image="assets/html-blurred-dark.jpg">
           <h2>Locators</h2>
-          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript" style="overflow: hidden">
-              getByLabel('Telefonnummer')     // 👎 Translations
-            </code></pre>
+          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript">getByLabel('Telefonnummer')     // 👎 Translations</code></pre>
+          <aside class="notes">
+            Denn viele der anderen Playwright-Locators sind problematisch, wenn man mit Übersetzungen arbeitet. getByLabel klingt nett, scheitert aber sofort, sobald die Sprache gewechselt wird.
+          </aside>
         </section>
+
         <section data-auto-animate data-background-image="assets/html-blurred-dark.jpg">
           <h2>Locators</h2>
-          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript" style="overflow: hidden">
-              getByLabel('Telefonnummer')     // 👎 Translations
-              getByTitle('Good Morning!')     // 👎 Translations
-            </code></pre>
+          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript">
+      getByLabel('Telefonnummer')     // 👎 Translations
+      getByTitle('Good Morning!')     // 👎 Translations
+          </code></pre>
+          <aside class="notes">
+            Dasselbe gilt für Titel. Sobald mehrsprachige Oberflächen im Spiel sind, brechen solche Locators. Deswegen sind sie unbrauchbar in internationalen Projekten.
+          </aside>
         </section>
+
         <section data-auto-animate data-background-image="assets/html-blurred-dark.jpg">
           <h2>Locators</h2>
-          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript" style="overflow: hidden">
-              getByLabel('Telefonnummer')     // 👎 Translations
-              getByTitle('Good Morning!')     // 👎 Translations
-              getByPlaceholder('Password')    // 👎 Translations
-            </code></pre>
+          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript">
+      getByLabel('Telefonnummer')     // 👎 Translations
+      getByTitle('Good Morning!')     // 👎 Translations
+      getByPlaceholder('Password')    // 👎 Translations
+          </code></pre>
+          <aside class="notes">
+            Auch Placeholder-Texte ändern sich mit der Sprache. Selbes Spiel, sie taugen nicht.
+          </aside>
         </section>
+
         <section data-auto-animate data-background-image="assets/html-blurred-dark.jpg">
           <h2>Locators</h2>
-          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript" style="overflow: hidden">
-              getByLabel('Telefonnummer')     // 👎 Translations
-              getByTitle('Good Morning!')     // 👎 Translations
-              getByPlaceholder('Password')    // 👎 Translations
-              getByAltText('profile picture') // ➖ keine Bildvergleiche
-            </code></pre>
+          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript">
+      getByLabel('Telefonnummer')     // 👎 Translations
+      getByTitle('Good Morning!')     // 👎 Translations
+      getByPlaceholder('Password')    // 👎 Translations
+      getByAltText('profile picture') // ➖ keine Bildvergleiche
+          </code></pre>
+          <aside class="notes">
+            Bei Alt-Texten ist es ähnlich. Für Barrierefreiheit wichtig und sogar verpflichtend. Sie müssen natürlich für Barrierefreiheit getestet werden. Für die absolute Mehrheit der Tests aber schlecht, weil sich Texte ändern können. Bildvergleiche wollen wir hier gar nicht erst machen.
+          </aside>
         </section>
+
         <section data-auto-animate data-background-image="assets/html-blurred-dark.jpg">
           <h2>Locators</h2>
-          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript" style="overflow: hidden">
-              getByLabel('Telefonnummer')     // 👎 Translations
-              getByTitle('Good Morning!')     // 👎 Translations
-              getByPlaceholder('Password')    // 👎 Translations
-              getByAltText('profile picture') // ➖ keine Bildvergleiche
-              getByText('Airbus A380')        // 👀 Legacy, Faulheit
-            </code></pre>
+          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript">
+      getByLabel('Telefonnummer')     // 👎 Translations
+      getByTitle('Good Morning!')     // 👎 Translations
+      getByPlaceholder('Password')    // 👎 Translations
+      getByAltText('profile picture') // ➖ keine Bildvergleiche
+      getByText('Airbus A380')        // 👀 Legacy, Faulheit
+          </code></pre>
+          <aside class="notes">
+            getByText haben wir manchmal genutzt, meistens aus Bequemlichkeit. Es funktioniert nur so lange, wie der Text eindeutig ist. Sobald derselbe Text zweimal vorkommt, brechen die Tests. Aber in Fällen wo wir Namen oder Typen verwenden, ist es oft eindeutig genug.
+          </aside>
         </section>
+
         <section data-auto-animate data-background-image="assets/html-blurred-dark.jpg">
           <h2>Locators</h2>
-          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript" style="overflow: hidden">
-              getByLabel('Telefonnummer')     // 👎 Translations
-              getByTitle('Good Morning!')     // 👎 Translations
-              getByPlaceholder('Password')    // 👎 Translations
-              getByAltText('profile picture') // ➖ keine Bildvergleiche
-              getByText('Airbus A380')        // 👀 Legacy, Faulheit
-              getByRole('button')             // 👍 Sehr nützlich
-            </code></pre>
-          <div style="
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: row;
-                gap: 5%;
-              ">
+          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript">
+      getByLabel('Telefonnummer')     // 👎 Translations
+      getByTitle('Good Morning!')     // 👎 Translations
+      getByPlaceholder('Password')    // 👎 Translations
+      getByAltText('profile picture') // ➖ keine Bildvergleiche
+      getByText('Airbus A380')        // 👀 Legacy, Faulheit
+      getByRole('button')             // 👍 Sehr nützlich
+          </code></pre>
+          <div style="display: flex; justify-content: center; align-items: center; flex-direction: row; gap: 5%;">
             <div style="color: var(--r-heading-color)">
               <p><span style="color: #00e1ff">Explicit</span> ARIA roles</p>
               <pre style="width: fit-content"><code class="html"><mat-row role="row"/></code></pre>
@@ -746,40 +725,134 @@
               <pre style="width: fit-content"><code>getByRole('searchbox')</code></pre>
             </div>
           </div>
+          <aside class="notes">
+            Sehr nützlich sind dagegen Rollen. Playwright unterstützt sowohl explizite als auch implizite ARIA-Rollen. Damit können wir stabil selektieren, unabhängig von Sprache oder Text. Ein Muss für saubere Tests. Allerdings ist es nicht unbedingt trivial, 
+            alle Rollen im Frontend zu kennen und zu wissen, welche Rolle welches HTML-Element hat. Die Doku hilft da meiner Ansicht nach auch nur bedingt weiter. Aber es lohnt sich, das zu lernen - wie immer.
+          </aside>
         </section>
+
         <section data-auto-animate data-background-image="assets/html-blurred-dark.jpg">
           <h2>Locators</h2>
-          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript" style="overflow: hidden">
-              getByLabel('Telefonnummer')     // 👎 Translations
-              getByTitle('Good Morning!')     // 👎 Translations
-              getByPlaceholder('Password')    // 👎 Translations
-              getByAltText('profile picture') // ➖ keine Bildvergleiche
-              getByText('Airbus A380')        // 👀 Legacy, Faulheit
-              getByRole('button')             // 👍 Sehr nützlich
-              locator('#country')             // 👍 Sehr nützlich
-            </code></pre>
+          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript">
+      getByLabel('Telefonnummer')     // 👎 Translations
+      getByTitle('Good Morning!')     // 👎 Translations
+      getByPlaceholder('Password')    // 👎 Translations
+      getByAltText('profile picture') // ➖ keine Bildvergleiche
+      getByText('Airbus A380')        // 👀 Legacy, Faulheit
+      getByRole('button')             // 👍 Sehr nützlich
+      locator('#country')             // 👍 Sehr nützlich
+          </code></pre>
+          <aside class="notes">
+            IDs und Framework-spezifische Selektoren sind ebenfalls stabil. Ein einfaches locator('#id') ist oft völlig ausreichend und verändert sich in der Regel nicht so schnell. Anders sehe das natürlich bei XPath aus, die sind meist viel zu fragil. 
+            Also div > div > span > a oder so geht gar nicht, vermeiden. Fürs Elternelement kann ich es mir manchmal vorstellen. Ein .. kann einacher sein als andere Selektoren. Aber bitte nicht übertreiben.
+          </aside>
         </section>
+
         <section data-auto-animate data-background-image="assets/html-blurred-dark.jpg">
           <h2>Locators</h2>
-          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript" style="overflow: hidden">
-              getByLabel('Telefonnummer')     // 👎 Translations
-              getByTitle('Good Morning!')     // 👎 Translations
-              getByPlaceholder('Password')    // 👎 Translations
-              getByAltText('profile picture') // ➖ keine Bildvergleiche
-              getByText('Airbus A380')        // 👀 Legacy, Faulheit
-              getByRole('button')             // 👍 Sehr nützlich
-              locator('#country')             // 👍 Sehr nützlich
-              getByTestId('button-settings')  // 👍 Top!
-            </code></pre>
+          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript">
+      getByLabel('Telefonnummer')     // 👎 Translations
+      getByTitle('Good Morning!')     // 👎 Translations
+      getByPlaceholder('Password')    // 👎 Translations
+      getByAltText('profile picture') // ➖ keine Bildvergleiche
+      getByText('Airbus A380')        // 👀 Legacy, Faulheit
+      getByRole('button')             // 👍 Sehr nützlich
+      locator('#country')             // 👍 Sehr nützlich
+      getByTestId('button-settings')  // 👍 Top!
+          </code></pre>
+          <aside class="notes">
+            Am besten funktioniert es mit data-testid. Stabil, unabhängig von Sprache, eindeutig. Damit kann man präzise selektieren, tief in die Struktur hinein navigieren und Tests dauerhaft robust halten. Selbst wenn sich einzelne Komponenten verschieben, bleiben die Tests stabil. 
+            Da wir ja eher E2E machen, als eine UI-Tests ist es auch ok, wenn sich elemente visuell auf dem Bildschirm verändern. Das müssen andere Tests abdecken.
+          </aside>
         </section>
       </section>
+
       <!-- =================================================================================== -->
-      <!-- Reject the Gurke                                                                    -->
+      <!-- Mocking -->
+      <!-- =================================================================================== -->
+      <section>
+        <section data-background-image="assets/dont-dark.png">
+          <h1 class="r-fit-text">
+            <span class="fragment highlight-red" data-fragment-index="0">Mocking</span>
+          </h1>
+          <h2 data-fragment-index="0">
+            <div class="fragment" data-fragment-index="0"
+              style="display: flex; flex-direction: row; justify-content: center">
+              <div class="alarm">🚨</div>
+              <div class="alarm">🚨</div>
+              <div class="alarm">🚨</div>
+            </div>
+          </h2>
+          <aside class="notes">
+            Mocking klingt auf den ersten Blick attraktiv: man kann sich das Backend sparen und einfach die Antworten faken. 
+            Aber für End-to-End Tests ist das ein gefährlicher Irrweg. Wir verlieren den Bezug zur Realität, sobald sich das Backend ändert, 
+            merken wir es nicht mehr. Das fühlt sich sicher an, ist es aber nicht.
+          </aside>
+        </section>
+
+        <style>
+          @keyframes grow {
+            from { transform: scale(1); }
+            to { transform: scale(1.2); }
+          }
+          .alarm {
+            transition-duration: 1s;
+            animation-name: grow;
+            animation-duration: 0.5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-direction: alternate;
+          }
+        </style>
+
+        <section data-state="stats" data-background-image="assets/radar-dark.jpg">
+          <h2>Dynamische Daten 😤</h2>
+          <div style="padding-top: 10%; display: flex; flex-direction: row; justify-content: center; align-items: center; column-gap: 50px;">
+            <img data-src="assets/simulation.svg" class="r-stretch fragment" width="1000" />
+          </div>
+          <aside class="notes">
+            Unser Problem im Projekt: wir hatten dynamische Daten, zum Beispiel eine Simulation, die über viele Stunden lief. 
+            Je nach Uhrzeit waren die Ergebnisse unterschiedlich, mal fuhr das Auto 0 km/h, mal 20. Da war die Versuchung groß, 
+            einfach zu mocken und konstante Werte zurückzugeben. Kurzfristig bequem, langfristig gefährlich.
+            Denn was ist passiert? Das Backend hat sich geändert, die API response war plötzlich eine andere und unsere Tests waren grün, obwohl das Frontend nicht mehr funktionierte.
+          </aside>
+        </section>
+
+        <section data-state="stats" data-background-image="assets/radar-dark.jpg">
+          <h2>Wenn man einen Hammer hat...</h2>
+          <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; column-gap: 50px;">
+            <img data-src="assets/dark-side-abilities.jpg" class="r-frame fragment fade-down" width="500" />
+            <div style="color: var(--r-heading-color); text-align: left">
+              <p class="fragment fade-up">
+                <span style="color: rgb(233, 49, 49)">aufwendig</span> zu warten
+              </p>
+              <p class="fragment fade-in">
+                <span style="color: rgb(233, 49, 49)">kein</span> E2E mehr
+              </p>
+            </div>
+          </div>
+          <aside class="notes">
+            Mocking ist wie ein Hammer: sobald man ihn hat, sieht jedes Problem wie ein Nagel aus. Man umgeht die schwierigen Testdaten und 
+            merkt nicht, dass man sich vom End-to-End entfernt. Es wird aufwendig, die Mocks zu pflegen, wenn sich das Backend ändert. 
+            Am Ende sind es keine echten Tests mehr, sondern nur noch kontrollierte Illusionen. Deshalb: Mocking nur als Ausnahme, wenn man 
+            gezielt Fehlerfälle wie 500er provozieren will – nicht für den normalen Fluss. Für UI-Unit Tests auf jeden Fall, für E2E nicht.
+          </aside>
+        </section>
+      </section>
+
+      <!-- =================================================================================== -->
+      <!-- Reject the Gurke -->
       <!-- =================================================================================== -->
       <section>
         <section data-background-image="assets/dont-dark.png">
           <h1 class="r-fit-text"><span class="fragment highlight-red">Reject</span> the Gurke</h1>
+          <aside class="notes">
+            Kein Cucumber/Gherkin über Playwright stülpen. In großen Projekten erzeugt das nur zusätzlichen Overhead und verschleiert die eigentliche Logik. Außenstehende finden sich 
+            in einer komplexen Codebasis schwer zurecht, aber die Lösung ist nicht eine weitere Abstraktionsschicht mit Steps, sondern klare, lesbare Tests direkt im Code. Wenn jemand 
+            diese Kette nicht lesen kann, hilft Gherkin auch nicht.
+          </aside>
         </section>
+
         <style>
           .item {
             display: flex;
@@ -791,7 +864,6 @@
             border-radius: 25%;
             color: var(--r-heading-color);
           }
-
           .node {
             width: 100%;
             border: 1px solid var(--r-heading-color);
@@ -799,76 +871,37 @@
             padding: 20px;
             font-size: 1.2rem;
           }
-
-          .midnightblue {
-            background-color: #27a365;
-          }
-
-          .bluegray {
-            background-color: #5885af;
-          }
-
-          .darkblue {
-            background-color: #3d64a3;
-          }
-
-          .babyblue {
-            background-color: #52aab9;
-          }
-
-          .cream {
-            background-color: #f6eee0;
-          }
-
-          .peach {
-            background-color: #e4b7a0;
-          }
-
-          .desertsun {
-            background-color: #a45c40;
-          }
-
-          .coral {
-            background-color: #c38370;
-          }
-
+          .midnightblue { background-color: #27a365; }
+          .bluegray { background-color: #5885af; }
+          .darkblue { background-color: #3d64a3; }
+          .babyblue { background-color: #52aab9; }
+          .cream { background-color: #f6eee0; }
+          .peach { background-color: #e4b7a0; }
+          .desertsun { background-color: #a45c40; }
+          .coral { background-color: #c38370; }
           .row {
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            /* column-gap: 5px; */
             width: 100%;
           }
-
           .column {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            /* row-gap: 25px; */
             width: 100%;
           }
-
-          .empty {
-            padding: 7px;
-          }
+          .empty { padding: 7px; }
         </style>
-        <section data-auto-animate="" data-state="stats" data-background-image="assets/forest-dark.jpg">
+
+        <section data-auto-animate data-state="stats" data-background-image="assets/forest-dark.jpg">
           <h2>Chaos</h2>
           <div class="r-stack">
             <img data-src="assets/retro-dark.png" class="fragment current-visible r-frame" width="500" />
             <img data-src="assets/pageobject.gif" class="fragment current-visible r-frame" width="500" />
-            <div class="fragment" style="
-                  position: relative;
-                  font-size: x-large;
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  align-items: center;
-                  width: 100%;
-                  color: var(--r-heading-color);
-                ">
+            <div class="fragment" style="position: relative; font-size: x-large; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; color: var(--r-heading-color);">
               <div class="row">
                 <div class="item midnightblue" data-id="p-1"></div>
                 <div class="empty"></div>
@@ -910,19 +943,17 @@
               </div>
             </div>
           </div>
+          <aside class="notes">
+            So fühlt sich die Codebasis ohne klare Führung an: viele Page Objects, ähnliche Namen, niemand weiß, wo man anfängt. Diese Verwirrung 
+            verführt dazu, Gherkin einzuführen – aber das löst das eigentliche Problem nicht. Wir brauchen Struktur im Code, nicht eine zusätzliche Schicht an Textbeschreibung.
+            Wenn ich hunderte Page Objects habe, was hilft mir eine Beschreibung in Gherkin? Dann hab ich ja immer noch genauso viel Aktionen aus denen ich auswählen muss.
+            Sinnvoller ist es, die Page Objects zu gruppieren und sich baum-artig durch die Struktur zu arbeiten. Entwickler lieben Bäume.
+          </aside>
         </section>
+
         <section data-auto-animate data-state="stats" data-background-image="assets/forest-dark.jpg">
           <h2>Order</h2>
-          <div style="
-                position: relative;
-                font-size: x-large;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                color: var(--r-heading-color);
-              ">
+          <div style="position: relative; font-size: x-large; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; color: var(--r-heading-color);">
             <span class="node" style="background-color: #8b989422">page</span>
             <div class="row">
               <div class="column">
@@ -1013,133 +1044,93 @@
               </div>
             </div>
           </div>
+          <aside class="notes">
+            Statt Gherkin geben wir der Codebasis Ordnung entlang des Testobjekts. Die Tests und Pages folgen der Struktur der Anwendung: von page in Bereiche 
+            wie machine und analysis, darunter weiter in car, alarm, telemetry, reports usw. So findet jeder sofort den Einstiegspunkt, ohne durch 60 gleichnamige Dateien zu raten.
+          </aside>
         </section>
+
         <section data-auto-animate data-state="stats" data-background-image="assets/forest-dark.jpg">
           <h2>Order</h2>
           <pre style="font-size: 1.2rem"><code class="typescript r-frame" data-line-numbers data-trim>
-              test("no alarms in overview, no alarms recorded", async ({ on, page }) => {
-                await on(page).machine.car.open("FZR 2000", "BN DE 598");
-                await on(page).machine.car.alarm.check.alarmsPresent([]);
-                await on(page).machine.car.alarm.do.switchToAnalysis();
-                await on(page).analysis.telemetry.sensor.check.alarmsRecorded([]);
-              });
-            </code></pre>
+      test("no alarms in overview, no alarms recorded", async ({ on, page }) => {
+        await on(page).machine.car.open("FZR 2000", "BN DE 598");
+        await on(page).machine.car.alarm.check.alarmsPresent([]);
+        await on(page).machine.car.alarm.do.switchToAnalysis();
+        await on(page).analysis.telemetry.sensor.check.alarmsRecorded([]);
+      });
+          </code></pre>
+          <aside class="notes">
+            Diese Kette ist die gemeinsame Sprache: klarer Code statt Gemüse. Klar erkennbar, wo wir sind und was geprüft wird. Keine versteckten Steps, 
+            kein Boilerplate. Lesbar für Tester und Entwickler, wartbar bei 1000+ Tests.
+          </aside>
         </section>
       </section>
-      <!-- =================================================================================== -->
-      <!-- Mocking                                                                             -->
-      <!-- =================================================================================== -->
-      <section>
-        <section data-background-image="assets/dont-dark.png">
-          <h1 class="r-fit-text">
-            <span class="fragment highlight-red" data-fragment-index="0">Mocking</span>
-          </h1>
-          <h2 data-fragment-index="0">
-            <div class="fragment" data-fragment-index="0"
-              style="display: flex; flex-direction: row; justify-content: center">
-              <div class="alarm">🚨</div>
-              <div class="alarm">🚨</div>
-              <div class="alarm">🚨</div>
-            </div>
-          </h2>
-        </section>
-        <style>
-          @keyframes grow {
-            from {
-              transform: scale(1);
-            }
 
-            to {
-              transform: scale(1.2);
-            }
-          }
-
-          .alarm {
-            transition-duration: 1s;
-            animation-name: grow;
-            animation-duration: 0.5s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-            animation-direction: alternate;
-          }
-        </style>
-        <section data-state="stats" data-background-image="assets/radar-dark.jpg">
-          <h2>Dynamische Daten 😤</h2>
-          <div style="
-                padding-top: 10%;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                column-gap: 50px;
-              ">
-            <img data-src="assets/simulation.svg" class="r-stretch fragment" width="1000" />
-          </div>
-        </section>
-        <section data-state="stats" data-background-image="assets/radar-dark.jpg">
-          <h2>Wenn man einen Hammer hat...</h2>
-          <div style="
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                column-gap: 50px;
-              ">
-            <img data-src="assets/dark-side-abilities.jpg" class="r-frame fragment fade-down" width="500" />
-            <div style="color: var(--r-heading-color); text-align: left">
-              <p class="fragment fade-up">
-                <span style="color: rgb(233, 49, 49)">aufwendig</span> zu warten
-              </p>
-              <p class="fragment fade-in">
-                <span style="color: rgb(233, 49, 49)">kein</span> E2E mehr
-              </p>
-            </div>
-          </div>
-        </section>
-      </section>
+      
       <!-- =================================================================================== -->
-      <!-- Multi-User                                                                          -->
+      <!-- Multi-User -->
       <!-- =================================================================================== -->
       <section>
         <section data-background-image="assets/do-dark.png">
           <h1 class="r-fit-text">Multi-User</h1>
           <h2 class="fragment highlight-green">Sugar</h2>
+          <aside class="notes">
+            Multi-User: In der Realität nutzt fast niemand eine Anwendung allein, also brauchen wir echte Mehrbenutzer-Szenarien in unseren E2E-Tests. Statt Boilerplate für Browser-Kontexte 
+            und Pages setzen wir auf ein bisschen „Sugar“, der die Perspektivwechsel kapselt und lesbar macht. Wichtig ist dabei, dass Setup und Teardown strikt per API passieren und jede 
+            Session isoliert ist – dann bleibt das stabil und parallelisierbar. Ziel sind kurze, gut lesbare Tests mit klaren Rollenwechseln, ohne dass wir uns im technischen Kleinkram verlieren.
+          </aside>
         </section>
+
         <section data-background-image="assets/people-dark.jpg">
-          <h1>Jane & John</h1>
-          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript" style="overflow: hidden;font-size: 1.3rem;">
-				test("multi-user", async ({ as, on, page }) => {
-					await on(page).main.open();
-					await on(page).main.editor.do.sendMessage({ text: "Hi from Jane!" });
-				  
-					await as("john@example.org", async ({ page }) => {
-						await on(page)
-							.main.posts.getPost({ author: "Jane", which: "last" })
-							.check.equals({ message: "Hi from Jane!" });
-					});
-				});
-            </code></pre>
+          <h1>Jane &amp; John</h1>
+          <pre class="r-frame" data-id="code">
+            <code data-trim data-line-numbers class="typescript" style="overflow: hidden;font-size: 1.3rem;">
+      test("multi-user", async ({ as, on, page }) => {
+        await on(page).main.open();
+        await on(page).main.editor.do.sendMessage({ text: "Hi from Jane!" });
+        
+        await as("john@example.org", async ({ page }) => {
+          await on(page)
+            .main.posts.getPost({ author: "Jane", which: "last" })
+            .check.equals({ message: "Hi from Jane!" });
+        });
+      });
+            </code>
+          </pre>
+          <aside class="notes">
+            Jane &amp; John: Jane schickt eine Nachricht, John prüft danach, ob sie bei ihm ankommt. Der Wechsel passiert schlicht über as("john@example.org"), ohne manuell mit newContext 
+            und newPage zu hantieren. Damit das deterministisch bleibt, bereiten wir den Zustand immer über die API vor und räumen auch so wieder auf; keine UI-Preconditions, keine Klick-Orgie. 
+            Rennbedingungen vermeiden wir über eindeutige Testkanäle bzw. IDs und sauber getrennte Nutzer-Sessions. Mocking setzen wir hier nicht ein – wir wollen End-to-End sehen, wenn sich im Backend etwas ändert.
+          </aside>
         </section>
+
         <section data-background-image="assets/people-dark.jpg">
           <h1>John, but single</h1>
-          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript" style="overflow: hidden;font-size: 1.3rem;">
-				test.as("john@example.org", () => {
-					test("check title", async ({ on, page }) => {
-						await on(page).main.open();
-						await on(page).main.title.check.greeting('Hi John!');
-					});
-				});
-            </code></pre>
+          <pre class="r-frame" data-id="code">
+            <code data-trim data-line-numbers class="typescript" style="overflow: hidden;font-size: 1.3rem;">
+      test.as("john@example.org", () => {
+        test("check title", async ({ on, page }) => {
+          await on(page).main.open();
+          await on(page).main.title.check.greeting('Hi John!');
+        });
+      });
+            </code>
+          </pre>
+          <aside class="notes">
+            John, aber single: Manchmal reicht ein Nutzer. Dann scopen wir die ganze Gruppe mit test.as("john@example.org", …), sparen Wiederholungen und behalten die Lesbarkeit. 
+            Das funktioniert nur zuverlässig, wenn jede Spezifikation ihr eigenes API-Setup und -Teardown mitbringt und keine verdeckten Abhängigkeiten existieren. Unabhängige Fälle 
+            können so parallel laufen, abhängige markieren wir als nicht parallel, damit es keine Race Conditions gibt. Ergebnis: kürzere, klarere Specs, ohne an Aussagekraft zu verlieren.
+          </aside>
         </section>
       </section>
+
+      <!-- =================================================================================== -->
+      <!-- Dos & Don'ts -->
+      <!-- =================================================================================== -->
       <section data-background-image="assets/dos-donts.png">
-        <h1>Dos & Don'ts</h1>
-        <div style="
-              display: flex;
-              flex-direction: row;
-              justify-content: space-between;
-              color: var(--r-heading-color);
-            ">
+        <h1>Dos &amp; Don'ts</h1>
+        <div style="display: flex; flex-direction: row; justify-content: space-between; color: var(--r-heading-color);">
           <div style="width: 100%">
             <p>Playwright Guide</p>
             <p>Testobjekt ist Quelle der Wahrheit</p>
@@ -1154,7 +1145,27 @@
             <p>Hohe Abstraktionsniveaus</p>
           </div>
         </div>
+
+        <aside class="notes">
+          Kurz zusammengefasst: Erstens, haltet euch an den offiziellen Playwright Guide – damit sind 80 % der Praxisfälle sauber abgedeckt. 
+          Zweitens, das Testobjekt ist die gemeinsame Sprache, die alle verstehen; richtet Struktur und Pages daran aus. Drittens, Zustand 
+          immer per API vorbereiten und aufräumen, keine UI-Preconditions. Viertens, früh „fully parallel“ denken, damit Sharding und CI 
+          später nicht schmerzen. Fünftens, Multi-User-Sugar für klare, lesbare Perspektivwechsel.
+
+          Auf der Nicht-Tun-Seite: Macht euch nicht von Entwicklern abhängig – holt euch Zugänge und setzt eigene Test-IDs. Verlasst euch 
+          nicht auf Mocking für den Normalfall; sonst testet ihr nicht mehr End-to-End und lauft Backend-Änderungen hinterher. Und vermeidet 
+          überhöhte Abstraktionsniveaus (Cucumber/Gherkin-Schichten, Step-Orchester): Sie verschleiern nur die Logik. Besser klare, lesbare Ketten direkt im Code.
+        </aside>
       </section>
+
+      <!-- =================================================================================== -->
+      <!-- The End -->
+      <!-- =================================================================================== -->
+      <section>
+        <img src="assets/qr-code-pages.png" class="r-stretch" />
+      </section>
+
+
     </div>
   </div>
 
