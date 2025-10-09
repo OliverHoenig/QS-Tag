@@ -89,7 +89,7 @@
               Der erste Commit war im Oktober 2021.
               Go-Live war im Oktober 2024.
               Wir wurden im September 2023 involviert.
-              Das heitß als erste wurde sich eine Übersicht verschafft was an Tests schon da ist.
+              Das heißt als erstes wurde sich eine Übersicht verschafft was an Tests schon da ist.
             </aside>
           </div>
         </section>
@@ -116,7 +116,7 @@
             und Nachteile aufklräen und ggf. senibiliseren, dass es nicht die beste Idee ist hunterte von Features
             E2E-Test auf UI-Ebenen mit kompletter Datenbank über alle Systeme hinweng zu testen.
             Aber letztlich wurde sich nun dafür entschieden.
-            Letzt lich ist man da um ein Problem zu lösen. Und das Problem war E2E-Test innerhlab von einem Jahr für die
+            Letztlich ist man da um ein Problem zu lösen. Und das Problem war E2E-Test innerhalb von einem Jahr für die
             gesamte Anwendung zu schreiben.
           </aside>
         </section>
@@ -124,8 +124,23 @@
           <h1 data-id="h1-0">
             Geschafft?
             <span class="fragment fade-up" style="display: inline-block; color: #00e1ff">
-              Ja.</span>
+              Ja.
+            </span>
           </h1>
+          <aside class="notes">
+            Wurde das Ziel erreicht? Ja.
+            - 90% der Features wurden abgedeckt
+            - über 500 Tests automatisiert (1162 konkrete zur Laufzeit)
+            - Stabilität gewährleistet (ca. 1-2% flaky)
+            - Obwohl dafür eigenlich kein Zeit war. Da 500 Tests in einem Jahr mindestens 2 Test pro Arbeitstag
+            entspricht.
+            - Problematik: Es kommen immer neue Tests dazu und man hat nciht die Zeit jeden bereits abgeschlossen Test
+            nochmal zu stabiliseren, wenn dieser flacky wird. -> Es musste sich von Anfang an ein stabiles System /
+            Framework für die Tests entwickelt werden.
+            - Am ende ware nur 1-2% flacky. Also ca. 10-20 Tests pro Ausführung, welche man sich nochmal manuell
+            anschauen sollte.
+            - Wartbarkeit gewährleistet (251 Page Objects, 218 Testdateien)
+          </aside>
         </section>
 
         <!-- -->
