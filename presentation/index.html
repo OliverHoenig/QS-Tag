@@ -333,7 +333,8 @@
           </h2>
         </section>
         <section data-auto-animate data-background-image="assets/parallel-lines.jpg">
-          <pre class="r-frame"><code data-trim data-line-numbers class="typescript">
+          <pre class="r-frame">
+            <code data-trim data-line-numbers class="typescript">
                 import { defineConfig, devices } from '@playwright/test';
 
                 export default defineConfig({
@@ -342,10 +343,12 @@
                   fullyParallel: true,
 
                 })
-			</code></pre>
+			      </code>
+          </pre>
         </section>
         <section data-auto-animate data-background-image="assets/parallel-lines.jpg">
-          <pre class="r-frame"><code data-trim data-line-numbers class="typescript">
+          <pre class="r-frame">
+            <code data-trim data-line-numbers class="typescript">
                 import { defineConfig, devices } from '@playwright/test';
 
                 export default defineConfig({
@@ -354,15 +357,21 @@
                   fullyParallel: true,
 
                 })
-			</code></pre>
+			      </code>
+          </pre>
+          <aside class="notes">
+            TODO
+          </aside>
 
           <p>Unabhängige Tests in <span style="color: #00e1ff">eigene</span> Datei</p>
           <p class="fragment">
             Abhängige Tests in <span style="color: #00e1ff">gleiche</span> Datei
           </p>
         </section>
+
         <section data-auto-animate data-background-image="assets/parallel-lines.jpg">
-          <pre class="r-frame"><code data-trim data-line-numbers class="typescript">
+          <pre class="r-frame">
+            <code data-trim data-line-numbers class="typescript">
                 import { defineConfig, devices } from '@playwright/test';
 
                 export default defineConfig({
@@ -371,14 +380,15 @@
                   fullyParallel: true,
 
                 })
-			</code></pre>
-
+            </code>
+          </pre>
           <p>Unabhängige Tests in <span style="color: #00e1ff">eigene</span> Datei</p>
-
           <hr style="width: 100%" />
           <h3>Mutex</h3>
           <p>Abhängige Tests in <span style="color: #00e1ff">gleiche</span> Datei</p>
-          <pre style="width: fit-content"><code>test.describe.configure({ mode: "default" })</code></pre>
+          <pre style="width: fit-content">
+            <code>test.describe.configure({ mode: "default" })</code>
+          </pre>
         </section>
         <style>
           .box {
