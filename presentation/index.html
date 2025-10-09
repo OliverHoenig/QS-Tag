@@ -22,6 +22,7 @@
       <!-- =================================================================================== -->
       <!-- Intro                                                                             -->
       <!-- =================================================================================== -->
+      <!--
       <section data-background-image="assets/question-marks.jpg">
         <section>
           <h1>Problem</h1>
@@ -214,16 +215,50 @@
           </div>
         </section>
       </section>
+    -->
+      <!-- =================================================================================== -->
+      <!-- Cover                                                                               -->
+      <!-- =================================================================================== -->
+      <section>
+        <section>
+          <img src="assets/FolieCD-Deckblatt.png" alt="cover" class="r-stretch">
+        </section>
+        <section data-background-image="">
+          <img src="assets/FolieCD-Titel.png" alt="titel" class="r-stretch">
+        </section>
+
+      </section>
+
+      <!-- =================================================================================== -->
+      <!-- Titel                                                                               -->
+      <!-- =================================================================================== -->
+
+
       <!-- =================================================================================== -->
       <!-- Projekt                                                                             -->
       <!-- =================================================================================== -->
       <section data-background-image="assets/drawing-dark.jpg">
         <section>
           <h1>Projekt</h1>
+          <aside class="notes">
+            Nachfolgende Do's & Don'ts sind in einem Projket erprobt welche über 1 Jahr ging.
+            Das Projekt ist mittleriweile vorbei und reulstiteren aus der Auseinandersetzung damit was in dem Projekt
+            gut gelaufen ist und wo es verbesserungs Potentiale gab.
+            Um die Do's & Don'ts besser einordnen zu können möchten, wird nun etwas Kontext zu dem Projekt gegeben.
+          </aside>
         </section>
         <section>
           <h3>Flottenverwaltung</h3>
           <img data-src="assets/fleet-management.webp" alt="timeline project" class="r-stretch" />
+          <aside class="notes">
+            Allgemein ging es in dem Projekt um eine Software für die Flottenverwaltung. Diese Software ist eine
+            Webanwedung und die Testfälle zu der Software sollten automatisert werden.
+            Die echte Software können wir hier nicht zeigen, daher zeigt das Bild das was ChatGPT sich unter einem
+            Flottenverwaltungssystem zusammen haluziniert hat.
+            Und im wesentlich kommt es dem eignetlich Tool nahe. (Zumindest reicht es um sich grob vorstellen zu könne
+            um was es ging. Verschiedne Metriken, Reports, Grafiken, Telemetriedaten, Standorte der Fahrzeuge,
+            Benziehnstand, Anleitungen, Lizenzen etc.)
+          </aside>
         </section>
         <section>
           <h3>Timeline</h3>
@@ -231,6 +266,12 @@
             <img data-src="assets/timeline-no-arrow.svg" data-fragment-index="0" alt="timeline project" width="80%"
               class="r-stretch fragment current-visible zoom-in" />
             <img data-src="assets/timeline.svg" data-fragment-index="1" width="80%" class="r-stretch fragment none" />
+            <aside class="notes">
+              Der erste Commit war im Oktober 2021.
+              Go-Live war im Oktober 2024.
+              Wir wurden im September 2023 involviert.
+              Das heitß als erste wurde sich eine Übersicht verschafft was an Tests schon da ist.
+            </aside>
           </div>
         </section>
         <section>
@@ -243,6 +284,22 @@
             <img data-src="assets/pyramid-e2e.svg" data-fragment-index="3" width="60%"
               class="r-stretch fragment fade-in" />
           </div>
+          <aside class="notes">
+            Das Ziel war sich der Testpyramide zu nähern.
+            Also wurde sich angeschaut was davon schon umgesetzt ist.
+            Es wurden Unit-Tests von den Etwikclern geschreiben. Alsoe s gab schön viele Unit-Tests.
+            Ansonsten gab es... Nichts.
+            Es wurd sich dann leider dazu entscheidne, dass man "nur noch" sicherstellen muss, dass für den User alles
+            in Ornung ist.
+            Das heißt es wir einfach alles mit E2E-Tests abgedeckt. Also keine Integrationstests z.B. auf API-Ebene oder
+            kleiner Integrationstests auf UI-Ebene, die nicht das gesamte System brauchen wurden wegrationalisert.
+            Als Consultant hat man hier leider auch nicht immer den größten Einfluss. Man kann lediglich über die Vor-
+            und Nachteile aufklräen und ggf. senibiliseren, dass es nicht die beste Idee ist hunterte von Features
+            E2E-Test auf UI-Ebenen mit kompletter Datenbank über alle Systeme hinweng zu testen.
+            Aber letztlich wurde sich nun dafür entschieden.
+            Letzt lich ist man da um ein Problem zu lösen. Und das Problem war E2E-Test innerhlab von einem Jahr für die
+            gesamte Anwendung zu schreiben.
+          </aside>
         </section>
         <section data-auto-animate>
           <h1 data-id="h1-0">
@@ -620,8 +677,10 @@
             Auf Entwickler <span class="fragment highlight-red">warten</span>
           </h1>
           <aside class="notes">
-            Macht euch nicht von Entwicklern abhängig. Wartet nicht darauf, dass sie euch die Locators oder Test-IDs einbauen. Holt euch die Zugänge ins Repository und löst die Probleme 
-            selbst. Das spart Zeit, verhindert Blockaden und macht euch unabhängig – und die Entwickler sind meistens sogar froh, wenn sie sich nicht auch noch darum kümmern müssen.
+            Macht euch nicht von Entwicklern abhängig. Wartet nicht darauf, dass sie euch die Locators oder Test-IDs
+            einbauen. Holt euch die Zugänge ins Repository und löst die Probleme
+            selbst. Das spart Zeit, verhindert Blockaden und macht euch unabhängig – und die Entwickler sind meistens
+            sogar froh, wenn sie sich nicht auch noch darum kümmern müssen.
             Und ja, da ist manchmal ein wenig Diskussion für notwendig, aber es lohnt sich.
           </aside>
         </section>
@@ -639,17 +698,22 @@
             </div>
           </div>
           <aside class="notes">
-            Wir haben in unserem Projekt sehr schnell gemerkt: ohne eigene Test-IDs hätten wir das nicht geschafft. Am Ende waren es über 1500 data-testid Attribute im Frontend. 
-            Wären wir jedes Mal auf Entwickler angewiesen gewesen, hätten sie uns den Kopf abgerissen. Deshalb: Test-IDs selbst setzen und nicht warten.
-            data-testids sind super, weil sie sich nicht ändern, wenn sich das UI ändert. Und sie sind unsichtbar für Nutzer und Sprach- und Location-unabhängig
+            Wir haben in unserem Projekt sehr schnell gemerkt: ohne eigene Test-IDs hätten wir das nicht geschafft. Am
+            Ende waren es über 1500 data-testid Attribute im Frontend.
+            Wären wir jedes Mal auf Entwickler angewiesen gewesen, hätten sie uns den Kopf abgerissen. Deshalb: Test-IDs
+            selbst setzen und nicht warten.
+            data-testids sind super, weil sie sich nicht ändern, wenn sich das UI ändert. Und sie sind unsichtbar für
+            Nutzer und Sprach- und Location-unabhängig
           </aside>
         </section>
 
         <section data-auto-animate data-background-image="assets/html-blurred-dark.jpg">
           <h2>Locators</h2>
-          <pre class="r-frame" data-id="code"><code data-trim data-line-numbers class="typescript">getByLabel('Telefonnummer')     // 👎 Translations</code></pre>
+          <pre class="r-frame"
+            data-id="code"><code data-trim data-line-numbers class="typescript">getByLabel('Telefonnummer')     // 👎 Translations</code></pre>
           <aside class="notes">
-            Denn viele der anderen Playwright-Locators sind problematisch, wenn man mit Übersetzungen arbeitet. getByLabel klingt nett, scheitert aber sofort, sobald die Sprache gewechselt wird.
+            Denn viele der anderen Playwright-Locators sind problematisch, wenn man mit Übersetzungen arbeitet.
+            getByLabel klingt nett, scheitert aber sofort, sobald die Sprache gewechselt wird.
           </aside>
         </section>
 
@@ -660,7 +724,8 @@
       getByTitle('Good Morning!')     // 👎 Translations
           </code></pre>
           <aside class="notes">
-            Dasselbe gilt für Titel. Sobald mehrsprachige Oberflächen im Spiel sind, brechen solche Locators. Deswegen sind sie unbrauchbar in internationalen Projekten.
+            Dasselbe gilt für Titel. Sobald mehrsprachige Oberflächen im Spiel sind, brechen solche Locators. Deswegen
+            sind sie unbrauchbar in internationalen Projekten.
           </aside>
         </section>
 
@@ -685,7 +750,9 @@
       getByAltText('profile picture') // ➖ keine Bildvergleiche
           </code></pre>
           <aside class="notes">
-            Bei Alt-Texten ist es ähnlich. Für Barrierefreiheit wichtig und sogar verpflichtend. Sie müssen natürlich für Barrierefreiheit getestet werden. Für die absolute Mehrheit der Tests aber schlecht, weil sich Texte ändern können. Bildvergleiche wollen wir hier gar nicht erst machen.
+            Bei Alt-Texten ist es ähnlich. Für Barrierefreiheit wichtig und sogar verpflichtend. Sie müssen natürlich
+            für Barrierefreiheit getestet werden. Für die absolute Mehrheit der Tests aber schlecht, weil sich Texte
+            ändern können. Bildvergleiche wollen wir hier gar nicht erst machen.
           </aside>
         </section>
 
@@ -699,7 +766,9 @@
       getByText('Airbus A380')        // 👀 Legacy, Faulheit
           </code></pre>
           <aside class="notes">
-            getByText haben wir manchmal genutzt, meistens aus Bequemlichkeit. Es funktioniert nur so lange, wie der Text eindeutig ist. Sobald derselbe Text zweimal vorkommt, brechen die Tests. Aber in Fällen wo wir Namen oder Typen verwenden, ist es oft eindeutig genug.
+            getByText haben wir manchmal genutzt, meistens aus Bequemlichkeit. Es funktioniert nur so lange, wie der
+            Text eindeutig ist. Sobald derselbe Text zweimal vorkommt, brechen die Tests. Aber in Fällen wo wir Namen
+            oder Typen verwenden, ist es oft eindeutig genug.
           </aside>
         </section>
 
@@ -726,8 +795,11 @@
             </div>
           </div>
           <aside class="notes">
-            Sehr nützlich sind dagegen Rollen. Playwright unterstützt sowohl explizite als auch implizite ARIA-Rollen. Damit können wir stabil selektieren, unabhängig von Sprache oder Text. Ein Muss für saubere Tests. Allerdings ist es nicht unbedingt trivial, 
-            alle Rollen im Frontend zu kennen und zu wissen, welche Rolle welches HTML-Element hat. Die Doku hilft da meiner Ansicht nach auch nur bedingt weiter. Aber es lohnt sich, das zu lernen - wie immer.
+            Sehr nützlich sind dagegen Rollen. Playwright unterstützt sowohl explizite als auch implizite ARIA-Rollen.
+            Damit können wir stabil selektieren, unabhängig von Sprache oder Text. Ein Muss für saubere Tests.
+            Allerdings ist es nicht unbedingt trivial,
+            alle Rollen im Frontend zu kennen und zu wissen, welche Rolle welches HTML-Element hat. Die Doku hilft da
+            meiner Ansicht nach auch nur bedingt weiter. Aber es lohnt sich, das zu lernen - wie immer.
           </aside>
         </section>
 
@@ -743,8 +815,11 @@
       locator('#country')             // 👍 Sehr nützlich
           </code></pre>
           <aside class="notes">
-            IDs und Framework-spezifische Selektoren sind ebenfalls stabil. Ein einfaches locator('#id') ist oft völlig ausreichend und verändert sich in der Regel nicht so schnell. Anders sehe das natürlich bei XPath aus, die sind meist viel zu fragil. 
-            Also div > div > span > a oder so geht gar nicht, vermeiden. Fürs Elternelement kann ich es mir manchmal vorstellen. Ein .. kann einacher sein als andere Selektoren. Aber bitte nicht übertreiben.
+            IDs und Framework-spezifische Selektoren sind ebenfalls stabil. Ein einfaches locator('#id') ist oft völlig
+            ausreichend und verändert sich in der Regel nicht so schnell. Anders sehe das natürlich bei XPath aus, die
+            sind meist viel zu fragil.
+            Also div > div > span > a oder so geht gar nicht, vermeiden. Fürs Elternelement kann ich es mir manchmal
+            vorstellen. Ein .. kann einacher sein als andere Selektoren. Aber bitte nicht übertreiben.
           </aside>
         </section>
 
@@ -761,8 +836,11 @@
       getByTestId('button-settings')  // 👍 Top!
           </code></pre>
           <aside class="notes">
-            Am besten funktioniert es mit data-testid. Stabil, unabhängig von Sprache, eindeutig. Damit kann man präzise selektieren, tief in die Struktur hinein navigieren und Tests dauerhaft robust halten. Selbst wenn sich einzelne Komponenten verschieben, bleiben die Tests stabil. 
-            Da wir ja eher E2E machen, als eine UI-Tests ist es auch ok, wenn sich elemente visuell auf dem Bildschirm verändern. Das müssen andere Tests abdecken.
+            Am besten funktioniert es mit data-testid. Stabil, unabhängig von Sprache, eindeutig. Damit kann man präzise
+            selektieren, tief in die Struktur hinein navigieren und Tests dauerhaft robust halten. Selbst wenn sich
+            einzelne Komponenten verschieben, bleiben die Tests stabil.
+            Da wir ja eher E2E machen, als eine UI-Tests ist es auch ok, wenn sich elemente visuell auf dem Bildschirm
+            verändern. Das müssen andere Tests abdecken.
           </aside>
         </section>
       </section>
@@ -784,17 +862,25 @@
             </div>
           </h2>
           <aside class="notes">
-            Mocking klingt auf den ersten Blick attraktiv: man kann sich das Backend sparen und einfach die Antworten faken. 
-            Aber für End-to-End Tests ist das ein gefährlicher Irrweg. Wir verlieren den Bezug zur Realität, sobald sich das Backend ändert, 
+            Mocking klingt auf den ersten Blick attraktiv: man kann sich das Backend sparen und einfach die Antworten
+            faken.
+            Aber für End-to-End Tests ist das ein gefährlicher Irrweg. Wir verlieren den Bezug zur Realität, sobald sich
+            das Backend ändert,
             merken wir es nicht mehr. Das fühlt sich sicher an, ist es aber nicht.
           </aside>
         </section>
 
         <style>
           @keyframes grow {
-            from { transform: scale(1); }
-            to { transform: scale(1.2); }
+            from {
+              transform: scale(1);
+            }
+
+            to {
+              transform: scale(1.2);
+            }
           }
+
           .alarm {
             transition-duration: 1s;
             animation-name: grow;
@@ -807,20 +893,25 @@
 
         <section data-state="stats" data-background-image="assets/radar-dark.jpg">
           <h2>Dynamische Daten 😤</h2>
-          <div style="padding-top: 10%; display: flex; flex-direction: row; justify-content: center; align-items: center; column-gap: 50px;">
+          <div
+            style="padding-top: 10%; display: flex; flex-direction: row; justify-content: center; align-items: center; column-gap: 50px;">
             <img data-src="assets/simulation.svg" class="r-stretch fragment" width="1000" />
           </div>
           <aside class="notes">
-            Unser Problem im Projekt: wir hatten dynamische Daten, zum Beispiel eine Simulation, die über viele Stunden lief. 
-            Je nach Uhrzeit waren die Ergebnisse unterschiedlich, mal fuhr das Auto 0 km/h, mal 20. Da war die Versuchung groß, 
+            Unser Problem im Projekt: wir hatten dynamische Daten, zum Beispiel eine Simulation, die über viele Stunden
+            lief.
+            Je nach Uhrzeit waren die Ergebnisse unterschiedlich, mal fuhr das Auto 0 km/h, mal 20. Da war die
+            Versuchung groß,
             einfach zu mocken und konstante Werte zurückzugeben. Kurzfristig bequem, langfristig gefährlich.
-            Denn was ist passiert? Das Backend hat sich geändert, die API response war plötzlich eine andere und unsere Tests waren grün, obwohl das Frontend nicht mehr funktionierte.
+            Denn was ist passiert? Das Backend hat sich geändert, die API response war plötzlich eine andere und unsere
+            Tests waren grün, obwohl das Frontend nicht mehr funktionierte.
           </aside>
         </section>
 
         <section data-state="stats" data-background-image="assets/radar-dark.jpg">
           <h2>Wenn man einen Hammer hat...</h2>
-          <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; column-gap: 50px;">
+          <div
+            style="display: flex; flex-direction: row; justify-content: center; align-items: center; column-gap: 50px;">
             <img data-src="assets/dark-side-abilities.jpg" class="r-frame fragment fade-down" width="500" />
             <div style="color: var(--r-heading-color); text-align: left">
               <p class="fragment fade-up">
@@ -832,10 +923,14 @@
             </div>
           </div>
           <aside class="notes">
-            Mocking ist wie ein Hammer: sobald man ihn hat, sieht jedes Problem wie ein Nagel aus. Man umgeht die schwierigen Testdaten und 
-            merkt nicht, dass man sich vom End-to-End entfernt. Es wird aufwendig, die Mocks zu pflegen, wenn sich das Backend ändert. 
-            Am Ende sind es keine echten Tests mehr, sondern nur noch kontrollierte Illusionen. Deshalb: Mocking nur als Ausnahme, wenn man 
-            gezielt Fehlerfälle wie 500er provozieren will – nicht für den normalen Fluss. Für UI-Unit Tests auf jeden Fall, für E2E nicht.
+            Mocking ist wie ein Hammer: sobald man ihn hat, sieht jedes Problem wie ein Nagel aus. Man umgeht die
+            schwierigen Testdaten und
+            merkt nicht, dass man sich vom End-to-End entfernt. Es wird aufwendig, die Mocks zu pflegen, wenn sich das
+            Backend ändert.
+            Am Ende sind es keine echten Tests mehr, sondern nur noch kontrollierte Illusionen. Deshalb: Mocking nur als
+            Ausnahme, wenn man
+            gezielt Fehlerfälle wie 500er provozieren will – nicht für den normalen Fluss. Für UI-Unit Tests auf jeden
+            Fall, für E2E nicht.
           </aside>
         </section>
       </section>
@@ -847,8 +942,10 @@
         <section data-background-image="assets/dont-dark.png">
           <h1 class="r-fit-text"><span class="fragment highlight-red">Reject</span> the Gurke</h1>
           <aside class="notes">
-            Kein Cucumber/Gherkin über Playwright stülpen. In großen Projekten erzeugt das nur zusätzlichen Overhead und verschleiert die eigentliche Logik. Außenstehende finden sich 
-            in einer komplexen Codebasis schwer zurecht, aber die Lösung ist nicht eine weitere Abstraktionsschicht mit Steps, sondern klare, lesbare Tests direkt im Code. Wenn jemand 
+            Kein Cucumber/Gherkin über Playwright stülpen. In großen Projekten erzeugt das nur zusätzlichen Overhead und
+            verschleiert die eigentliche Logik. Außenstehende finden sich
+            in einer komplexen Codebasis schwer zurecht, aber die Lösung ist nicht eine weitere Abstraktionsschicht mit
+            Steps, sondern klare, lesbare Tests direkt im Code. Wenn jemand
             diese Kette nicht lesen kann, hilft Gherkin auch nicht.
           </aside>
         </section>
@@ -864,6 +961,7 @@
             border-radius: 25%;
             color: var(--r-heading-color);
           }
+
           .node {
             width: 100%;
             border: 1px solid var(--r-heading-color);
@@ -871,14 +969,39 @@
             padding: 20px;
             font-size: 1.2rem;
           }
-          .midnightblue { background-color: #27a365; }
-          .bluegray { background-color: #5885af; }
-          .darkblue { background-color: #3d64a3; }
-          .babyblue { background-color: #52aab9; }
-          .cream { background-color: #f6eee0; }
-          .peach { background-color: #e4b7a0; }
-          .desertsun { background-color: #a45c40; }
-          .coral { background-color: #c38370; }
+
+          .midnightblue {
+            background-color: #27a365;
+          }
+
+          .bluegray {
+            background-color: #5885af;
+          }
+
+          .darkblue {
+            background-color: #3d64a3;
+          }
+
+          .babyblue {
+            background-color: #52aab9;
+          }
+
+          .cream {
+            background-color: #f6eee0;
+          }
+
+          .peach {
+            background-color: #e4b7a0;
+          }
+
+          .desertsun {
+            background-color: #a45c40;
+          }
+
+          .coral {
+            background-color: #c38370;
+          }
+
           .row {
             display: flex;
             flex-direction: row;
@@ -886,6 +1009,7 @@
             align-items: center;
             width: 100%;
           }
+
           .column {
             display: flex;
             flex-direction: column;
@@ -893,7 +1017,10 @@
             align-items: center;
             width: 100%;
           }
-          .empty { padding: 7px; }
+
+          .empty {
+            padding: 7px;
+          }
         </style>
 
         <section data-auto-animate data-state="stats" data-background-image="assets/forest-dark.jpg">
@@ -901,7 +1028,8 @@
           <div class="r-stack">
             <img data-src="assets/retro-dark.png" class="fragment current-visible r-frame" width="500" />
             <img data-src="assets/pageobject.gif" class="fragment current-visible r-frame" width="500" />
-            <div class="fragment" style="position: relative; font-size: x-large; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; color: var(--r-heading-color);">
+            <div class="fragment"
+              style="position: relative; font-size: x-large; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; color: var(--r-heading-color);">
               <div class="row">
                 <div class="item midnightblue" data-id="p-1"></div>
                 <div class="empty"></div>
@@ -944,16 +1072,21 @@
             </div>
           </div>
           <aside class="notes">
-            So fühlt sich die Codebasis ohne klare Führung an: viele Page Objects, ähnliche Namen, niemand weiß, wo man anfängt. Diese Verwirrung 
-            verführt dazu, Gherkin einzuführen – aber das löst das eigentliche Problem nicht. Wir brauchen Struktur im Code, nicht eine zusätzliche Schicht an Textbeschreibung.
-            Wenn ich hunderte Page Objects habe, was hilft mir eine Beschreibung in Gherkin? Dann hab ich ja immer noch genauso viel Aktionen aus denen ich auswählen muss.
-            Sinnvoller ist es, die Page Objects zu gruppieren und sich baum-artig durch die Struktur zu arbeiten. Entwickler lieben Bäume.
+            So fühlt sich die Codebasis ohne klare Führung an: viele Page Objects, ähnliche Namen, niemand weiß, wo man
+            anfängt. Diese Verwirrung
+            verführt dazu, Gherkin einzuführen – aber das löst das eigentliche Problem nicht. Wir brauchen Struktur im
+            Code, nicht eine zusätzliche Schicht an Textbeschreibung.
+            Wenn ich hunderte Page Objects habe, was hilft mir eine Beschreibung in Gherkin? Dann hab ich ja immer noch
+            genauso viel Aktionen aus denen ich auswählen muss.
+            Sinnvoller ist es, die Page Objects zu gruppieren und sich baum-artig durch die Struktur zu arbeiten.
+            Entwickler lieben Bäume.
           </aside>
         </section>
 
         <section data-auto-animate data-state="stats" data-background-image="assets/forest-dark.jpg">
           <h2>Order</h2>
-          <div style="position: relative; font-size: x-large; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; color: var(--r-heading-color);">
+          <div
+            style="position: relative; font-size: x-large; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; color: var(--r-heading-color);">
             <span class="node" style="background-color: #8b989422">page</span>
             <div class="row">
               <div class="column">
@@ -1045,8 +1178,10 @@
             </div>
           </div>
           <aside class="notes">
-            Statt Gherkin geben wir der Codebasis Ordnung entlang des Testobjekts. Die Tests und Pages folgen der Struktur der Anwendung: von page in Bereiche 
-            wie machine und analysis, darunter weiter in car, alarm, telemetry, reports usw. So findet jeder sofort den Einstiegspunkt, ohne durch 60 gleichnamige Dateien zu raten.
+            Statt Gherkin geben wir der Codebasis Ordnung entlang des Testobjekts. Die Tests und Pages folgen der
+            Struktur der Anwendung: von page in Bereiche
+            wie machine und analysis, darunter weiter in car, alarm, telemetry, reports usw. So findet jeder sofort den
+            Einstiegspunkt, ohne durch 60 gleichnamige Dateien zu raten.
           </aside>
         </section>
 
@@ -1061,13 +1196,14 @@
       });
           </code></pre>
           <aside class="notes">
-            Diese Kette ist die gemeinsame Sprache: klarer Code statt Gemüse. Klar erkennbar, wo wir sind und was geprüft wird. Keine versteckten Steps, 
+            Diese Kette ist die gemeinsame Sprache: klarer Code statt Gemüse. Klar erkennbar, wo wir sind und was
+            geprüft wird. Keine versteckten Steps,
             kein Boilerplate. Lesbar für Tester und Entwickler, wartbar bei 1000+ Tests.
           </aside>
         </section>
       </section>
 
-      
+
       <!-- =================================================================================== -->
       <!-- Multi-User -->
       <!-- =================================================================================== -->
@@ -1076,9 +1212,12 @@
           <h1 class="r-fit-text">Multi-User</h1>
           <h2 class="fragment highlight-green">Sugar</h2>
           <aside class="notes">
-            Multi-User: In der Realität nutzt fast niemand eine Anwendung allein, also brauchen wir echte Mehrbenutzer-Szenarien in unseren E2E-Tests. Statt Boilerplate für Browser-Kontexte 
-            und Pages setzen wir auf ein bisschen „Sugar“, der die Perspektivwechsel kapselt und lesbar macht. Wichtig ist dabei, dass Setup und Teardown strikt per API passieren und jede 
-            Session isoliert ist – dann bleibt das stabil und parallelisierbar. Ziel sind kurze, gut lesbare Tests mit klaren Rollenwechseln, ohne dass wir uns im technischen Kleinkram verlieren.
+            Multi-User: In der Realität nutzt fast niemand eine Anwendung allein, also brauchen wir echte
+            Mehrbenutzer-Szenarien in unseren E2E-Tests. Statt Boilerplate für Browser-Kontexte
+            und Pages setzen wir auf ein bisschen „Sugar“, der die Perspektivwechsel kapselt und lesbar macht. Wichtig
+            ist dabei, dass Setup und Teardown strikt per API passieren und jede
+            Session isoliert ist – dann bleibt das stabil und parallelisierbar. Ziel sind kurze, gut lesbare Tests mit
+            klaren Rollenwechseln, ohne dass wir uns im technischen Kleinkram verlieren.
           </aside>
         </section>
 
@@ -1099,9 +1238,12 @@
             </code>
           </pre>
           <aside class="notes">
-            Jane &amp; John: Jane schickt eine Nachricht, John prüft danach, ob sie bei ihm ankommt. Der Wechsel passiert schlicht über as("john@example.org"), ohne manuell mit newContext 
-            und newPage zu hantieren. Damit das deterministisch bleibt, bereiten wir den Zustand immer über die API vor und räumen auch so wieder auf; keine UI-Preconditions, keine Klick-Orgie. 
-            Rennbedingungen vermeiden wir über eindeutige Testkanäle bzw. IDs und sauber getrennte Nutzer-Sessions. Mocking setzen wir hier nicht ein – wir wollen End-to-End sehen, wenn sich im Backend etwas ändert.
+            Jane &amp; John: Jane schickt eine Nachricht, John prüft danach, ob sie bei ihm ankommt. Der Wechsel
+            passiert schlicht über as("john@example.org"), ohne manuell mit newContext
+            und newPage zu hantieren. Damit das deterministisch bleibt, bereiten wir den Zustand immer über die API vor
+            und räumen auch so wieder auf; keine UI-Preconditions, keine Klick-Orgie.
+            Rennbedingungen vermeiden wir über eindeutige Testkanäle bzw. IDs und sauber getrennte Nutzer-Sessions.
+            Mocking setzen wir hier nicht ein – wir wollen End-to-End sehen, wenn sich im Backend etwas ändert.
           </aside>
         </section>
 
@@ -1118,9 +1260,12 @@
             </code>
           </pre>
           <aside class="notes">
-            John, aber single: Manchmal reicht ein Nutzer. Dann scopen wir die ganze Gruppe mit test.as("john@example.org", …), sparen Wiederholungen und behalten die Lesbarkeit. 
-            Das funktioniert nur zuverlässig, wenn jede Spezifikation ihr eigenes API-Setup und -Teardown mitbringt und keine verdeckten Abhängigkeiten existieren. Unabhängige Fälle 
-            können so parallel laufen, abhängige markieren wir als nicht parallel, damit es keine Race Conditions gibt. Ergebnis: kürzere, klarere Specs, ohne an Aussagekraft zu verlieren.
+            John, aber single: Manchmal reicht ein Nutzer. Dann scopen wir die ganze Gruppe mit
+            test.as("john@example.org", …), sparen Wiederholungen und behalten die Lesbarkeit.
+            Das funktioniert nur zuverlässig, wenn jede Spezifikation ihr eigenes API-Setup und -Teardown mitbringt und
+            keine verdeckten Abhängigkeiten existieren. Unabhängige Fälle
+            können so parallel laufen, abhängige markieren wir als nicht parallel, damit es keine Race Conditions gibt.
+            Ergebnis: kürzere, klarere Specs, ohne an Aussagekraft zu verlieren.
           </aside>
         </section>
       </section>
@@ -1147,14 +1292,20 @@
         </div>
 
         <aside class="notes">
-          Kurz zusammengefasst: Erstens, haltet euch an den offiziellen Playwright Guide – damit sind 80 % der Praxisfälle sauber abgedeckt. 
-          Zweitens, das Testobjekt ist die gemeinsame Sprache, die alle verstehen; richtet Struktur und Pages daran aus. Drittens, Zustand 
-          immer per API vorbereiten und aufräumen, keine UI-Preconditions. Viertens, früh „fully parallel“ denken, damit Sharding und CI 
+          Kurz zusammengefasst: Erstens, haltet euch an den offiziellen Playwright Guide – damit sind 80 % der
+          Praxisfälle sauber abgedeckt.
+          Zweitens, das Testobjekt ist die gemeinsame Sprache, die alle verstehen; richtet Struktur und Pages daran aus.
+          Drittens, Zustand
+          immer per API vorbereiten und aufräumen, keine UI-Preconditions. Viertens, früh „fully parallel“ denken, damit
+          Sharding und CI
           später nicht schmerzen. Fünftens, Multi-User-Sugar für klare, lesbare Perspektivwechsel.
 
-          Auf der Nicht-Tun-Seite: Macht euch nicht von Entwicklern abhängig – holt euch Zugänge und setzt eigene Test-IDs. Verlasst euch 
-          nicht auf Mocking für den Normalfall; sonst testet ihr nicht mehr End-to-End und lauft Backend-Änderungen hinterher. Und vermeidet 
-          überhöhte Abstraktionsniveaus (Cucumber/Gherkin-Schichten, Step-Orchester): Sie verschleiern nur die Logik. Besser klare, lesbare Ketten direkt im Code.
+          Auf der Nicht-Tun-Seite: Macht euch nicht von Entwicklern abhängig – holt euch Zugänge und setzt eigene
+          Test-IDs. Verlasst euch
+          nicht auf Mocking für den Normalfall; sonst testet ihr nicht mehr End-to-End und lauft Backend-Änderungen
+          hinterher. Und vermeidet
+          überhöhte Abstraktionsniveaus (Cucumber/Gherkin-Schichten, Step-Orchester): Sie verschleiern nur die Logik.
+          Besser klare, lesbare Ketten direkt im Code.
         </aside>
       </section>
 
